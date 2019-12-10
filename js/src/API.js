@@ -5,11 +5,11 @@
  * See /LICENSE for more information.
  */
 
-const API_URL_PREFIX = "reforis/remote-devices/api";
+const API_URL_PREFIX = "/reforis/remote-devices/api";
 
 const API_URLs = new Proxy(
     {
-        example: "/example",
+        devices: "/devices",
     },
     {
         get: (target, name) => `${API_URL_PREFIX}${target[name]}`,
