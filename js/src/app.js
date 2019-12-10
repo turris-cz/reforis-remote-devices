@@ -5,14 +5,14 @@
  * See /LICENSE for more information.
  */
 
-import RemoteDevices from "./remote_devices/RemoteDevices";
+import RemoteDevices from "./remoteDevices/RemoteDevices";
 
 const RemoteDevicesPlugin = {
     name: _("Remote Devices"),
-    submenuId: "administration",
     weight: 100,
     path: "/remote-devices",
     component: RemoteDevices,
+    icon: "server",
 };
 
 ForisPlugins.push(RemoteDevicesPlugin);

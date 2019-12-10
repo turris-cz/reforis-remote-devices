@@ -5,6 +5,8 @@
 
 from pathlib import Path
 from http import HTTPStatus
+from os.path import splitext
+import base64
 
 from flask import Blueprint, current_app, jsonify, request
 from flask_babel import gettext as _
@@ -30,17 +32,34 @@ remote_devices = {
 }
 
 
-@blueprint.route('/example', methods=['GET'])
-def get_example():
-    return jsonify(current_app.backend.perform('example_module', 'example_action'))
+@blueprint.route('/devices', methods=['GET'])
+def get_devices():
+    return jsonify(current_app.backend.perform('subordinates', 'list')['subordinates'])
 
 
-@blueprint.route('/example', methods=['POST'])
-def post_example():
-    validate_json(request.json, {'modules': list})
+@blueprint.route('/devices', methods=['POST'])
+def post_devices():
+    if 'token' not in request.files:
+        raise APIError(_('Missing data for \'token\' file.'), HTTPStatus.BAD_REQUEST)
+    token_file = request.files['token']
 
-    response = current_app.backend.perform('example_module', 'example_action', request.json)
+    response = current_app.backend.perform(
+        'subordinates',
+        'add_sub',
+        {'token': base64.b64encode(token_file.read()).decode('utf-8')},
+    )
     if response.get('result') is not True:
-        raise APIError(_('Cannot create entity'), HTTPStatus.INTERNAL_SERVER_ERROR)
+        raise APIError(
+            _('Cannot add remote device token. Check if device is already added.'),
+            HTTPStatus.INTERNAL_SERVER_ERROR,
+        )
 
     return jsonify(response), HTTPStatus.CREATED
+
+
+@blueprint.route('/devices/<controller_id>', methods=['DELETE'])
+def delete_client(controller_id):
+    response = current_app.backend.perform('subordinates', 'del', {'controller_id': controller_id})
+    if response.get('result') is not True:
+        raise APIError(_('Cannot delete device.'), HTTPStatus.INTERNAL_SERVER_ERROR)
+    return '', HTTPStatus.NO_CONTENT

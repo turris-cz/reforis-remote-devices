@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DevicesTable /> should handle empty devices list 1`] = `
+<div>
+  <p
+    class="text-muted text-center"
+  >
+    No devices added yet.
+  </p>
+</div>
+`;
+
+exports[`<DevicesTable /> should render devices table 1`] = `
+<div>
+  <table
+    class="table table-hover"
+  >
+    <thead>
+      <tr>
+        <th
+          scope="col"
+        >
+          ID
+        </th>
+        <th
+          scope="col"
+        >
+          Access
+        </th>
+        <th
+          aria-label="Delete"
+          scope="col"
+        />
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td
+          class="align-middle"
+        >
+          A1
+        </td>
+        <td
+          class="align-middle"
+        >
+          Enabled
+        </td>
+        <td>
+          <button
+            class="btn btn-sm btn-danger"
+            type="button"
+          >
+             
+             
+            <i
+              class="fa fa-trash-alt mr-2"
+            />
+            Delete
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="align-middle"
+        >
+          A2
+        </td>
+        <td
+          class="align-middle"
+        >
+          Disabled
+        </td>
+        <td>
+          <button
+            class="btn btn-sm btn-danger"
+            type="button"
+          >
+             
+             
+            <i
+              class="fa fa-trash-alt mr-2"
+            />
+            Delete
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="align-middle"
+        >
+          B1
+        </td>
+        <td
+          class="align-middle"
+        >
+          Enabled
+        </td>
+        <td>
+          <button
+            class="btn btn-sm btn-danger"
+            type="button"
+          >
+             
+             
+            <i
+              class="fa fa-trash-alt mr-2"
+            />
+            Delete
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="align-middle"
+        >
+          B2
+        </td>
+        <td
+          class="align-middle"
+        >
+          Disabled
+        </td>
+        <td>
+          <button
+            class="btn btn-sm btn-danger"
+            type="button"
+          >
+             
+             
+            <i
+              class="fa fa-trash-alt mr-2"
+            />
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
