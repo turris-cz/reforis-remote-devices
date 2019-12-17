@@ -6,7 +6,7 @@
   "description": "",
   "main": "./src/app.js",
   "dependencies": {
-    "foris": "2.0.0"
+    "foris": "2.1.0-beta.8d3be8df"
   },
   "peerDependencies": {
     "prop-types": "15.7.2",

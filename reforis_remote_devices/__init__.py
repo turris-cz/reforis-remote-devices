@@ -11,7 +11,7 @@ import base64
 from flask import Blueprint, current_app, jsonify, request
 from flask_babel import gettext as _
 
-from reforis.foris_controller_api.utils import log_error, validate_json, APIError
+from reforis.foris_controller_api.utils import validate_json, APIError
 
 # pylint: disable=invalid-name
 blueprint = Blueprint(
@@ -62,4 +62,48 @@ def delete_client(controller_id):
     response = current_app.backend.perform('subordinates', 'del', {'controller_id': controller_id})
     if response.get('result') is not True:
         raise APIError(_('Cannot delete device.'), HTTPStatus.INTERNAL_SERVER_ERROR)
+    return '', HTTPStatus.NO_CONTENT
+
+
+@blueprint.route('/devices/<controller_id>', methods=['PATCH'])
+def patch_devices(controller_id):
+    """
+    Change device options and its enabled state (either must be provided).
+    """
+    validate_json(request.json)
+
+    options = request.json.get('options')
+    enabled = request.json.get('enabled')
+
+    if not options and enabled is None:
+        raise APIError(_('Missing data for "options" or "enabled" field.'), HTTPStatus.BAD_REQUEST)
+
+    responses = []
+    if options:
+        custom_name = options.get('custom_name')
+        if custom_name and len(custom_name) > 30:
+            raise APIError(
+                _('Name is too long. Maximum 30 characters are allowed.'),
+                HTTPStatus.BAD_REQUEST
+            )
+
+        options_response = current_app.backend.perform(
+            'subordinates',
+            'update_sub',
+            {'controller_id': controller_id, 'options': options},
+        )
+        responses.append(options_response)
+    if enabled is not None:  # because "enabled" is boolean
+        enabled_response = current_app.backend.perform(
+            'subordinates',
+            'set_enabled',
+            {'controller_id': controller_id, 'enabled': enabled},
+        )
+        responses.append(enabled_response)
+
+    update_failed = any(response.get('result') is not True for response in responses)
+
+    if update_failed:
+        raise APIError(_('Cannot update device.'), HTTPStatus.INTERNAL_SERVER_ERROR)
+
     return '', HTTPStatus.NO_CONTENT

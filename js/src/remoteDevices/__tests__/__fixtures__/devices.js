@@ -6,10 +6,14 @@
  */
 
 const devices = [
-    { controller_id: "A1", enabled: true },
-    { controller_id: "A2", enabled: false },
-    { controller_id: "B1", enabled: true },
-    { controller_id: "B2", enabled: false },
+    { controller_id: "A1", enabled: true, options: { custom_name: "A" } },
+    { controller_id: "A2", enabled: false, options: { custom_name: "A" } },
+    { controller_id: "B1", enabled: true, options: { custom_name: "B" } },
+    { controller_id: "B2", enabled: false, options: { custom_name: "B" } },
 ];
+
+export function createDevice(controller_id, enabled, custom_name) {
+    return { controller_id, enabled, options: { custom_name } };
+}
 
 export default devices;

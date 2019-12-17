@@ -5,10 +5,15 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import { withSpinnerOnSending, withErrorMessage, Button } from "foris";
+import { Button, useWSForisModule } from "foris";
+
+import EditableName from "./editableName/EditableName";
+import ToggleDevice from "./ToggleDevice";
+
+import "./DevicesTable.css";
 
 const deviceShape = PropTypes.shape({
     controller_id: PropTypes.string.isRequired,
@@ -16,52 +21,92 @@ const deviceShape = PropTypes.shape({
 });
 
 DevicesTable.propTypes = {
+    ws: PropTypes.object.isRequired,
     devices: PropTypes.arrayOf(deviceShape).isRequired,
-    onDelete: PropTypes.func.isRequired,
+    deleteDevice: PropTypes.func.isRequired,
+    patchDevice: PropTypes.func.isRequired,
 };
 
-function DevicesTable({ devices, onDelete }) {
+function DevicesTable({
+    ws, devices, deleteDevice, patchDevice,
+}) {
     if (!devices || devices.length === 0) {
         return <p className="text-muted text-center">{_("No devices added yet.")}</p>;
     }
 
     return (
-        <table className="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">{_("ID")}</th>
-                    <th scope="col">{_("Access")}</th>
-                    <th scope="col" aria-label={_("Delete")} />
-                </tr>
-            </thead>
-            <tbody>
-                {devices.map(
-                    (device) => (
-                        <DeviceRow
-                            key={device.controller_id}
-                            device={device}
-                            onDelete={() => onDelete({ suffix: device.controller_id })}
-                        />
-                    ),
-                )}
-            </tbody>
-        </table>
+        <div className="table-responsive">
+            <table className="table table-hover devices-table">
+                <thead>
+                    <tr>
+                        <th scope="col">{_("ID")}</th>
+                        <th scope="col">{_("Name")}</th>
+                        <th scope="col" className="text-center">{_("Status")}</th>
+                        <th scope="col" className="text-center">{_("Managed")}</th>
+                        <th scope="col" aria-label={_("Delete")} />
+                    </tr>
+                </thead>
+                <tbody>
+                    {devices.map(
+                        (device) => (
+                            <DeviceRow
+                                key={device.controller_id}
+                                ws={ws}
+                                device={device}
+                                deleteDevice={() => deleteDevice({ suffix: device.controller_id })}
+                                patchDevice={
+                                    (data) => patchDevice({ data, suffix: device.controller_id })
+                                }
+                            />
+                        ),
+                    )}
+                </tbody>
+            </table>
+        </div>
     );
 }
 
+export default DevicesTable;
+
 DeviceRow.propTypes = {
+    ws: PropTypes.object.isRequired,
     device: deviceShape,
-    onDelete: PropTypes.func.isRequired,
+    deleteDevice: PropTypes.func.isRequired,
+    patchDevice: PropTypes.func.isRequired,
 };
 
-function DeviceRow({ device, onDelete }) {
+function DeviceRow({
+    ws, device, deleteDevice, patchDevice,
+}) {
+    const [status, setStatus] = useState();
+
+    const [advertizeNotification] = useWSForisModule(ws, "remote", "advertize");
+    useEffect(() => {
+        if (advertizeNotification && advertizeNotification.id === device.controller_id) {
+            setStatus(advertizeNotification.state);
+        }
+    }, [advertizeNotification, device.controller_id, status]);
+
     return (
         <tr>
-            <td className="align-middle">{ device.controller_id }</td>
-            <td className="align-middle">{ device.enabled ? "Enabled" : "Disabled" }</td>
+            <td>{ device.controller_id }</td>
             <td>
-                <Button className="btn-sm btn-danger" onClick={onDelete}>
-                    <i className="fa fa-trash-alt mr-2" />
+                <EditableName name={device.options.custom_name} patchDevice={patchDevice} />
+            </td>
+            <td className="text-center">
+                {/* "key" is necessary to update the icon, see https://stackoverflow.com/q/47722813/6324591 */}
+                <StatusIcon status={status} key={`${device.controller_id}-${status}`} />
+            </td>
+            <td className="text-center">
+                <ToggleDevice
+                    controllerID={device.controller_id}
+                    enabled={device.enabled}
+                    patchDevice={patchDevice}
+                />
+            </td>
+            <td>
+                <Button className="btn-sm btn-danger" onClick={deleteDevice}>
+                    <i className="fa fa-trash-alt mr-2 devices-table-delete-icon" />
                     {_("Delete")}
                 </Button>
             </td>
@@ -69,4 +114,31 @@ function DeviceRow({ device, onDelete }) {
     );
 }
 
-export default withSpinnerOnSending(withErrorMessage(DevicesTable));
+StatusIcon.propTypes = {
+    status: PropTypes.string,
+};
+
+function StatusIcon({ status }) {
+    let className = "fa-question-circle text-warning";
+    let statusDescription = _("Unknown status");
+    if (status === "started") {
+        className = "fa-play-circle text-primary";
+        statusDescription = _("Started");
+    } else if (status === "running") {
+        className = "fa-check-circle text-success";
+        statusDescription = _("Running");
+    } else if (status === "exitted") {
+        className = "fa-times-circle text-danger";
+        statusDescription = _("Exited");
+    }
+
+    /*
+     * Wrapper tag is required to properly remove icon because "i" element
+     * is actually replaced by "svg" element.
+     */
+    return (
+        <span>
+            <i className={`fa fa-lg ${className}`} title={statusDescription} />
+        </span>
+    );
+}

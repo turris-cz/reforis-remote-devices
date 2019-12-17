@@ -5,27 +5,45 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { API_STATE, Spinner, ErrorMessage } from "foris";
 
-import useDevices from "./hooks";
 import DevicesTable from "./DevicesTable";
+import {
+    useGetDevices, useUpdateDevicesOnAdd, usePatchDevice, useUpdateDevicesOnEdit, useDeleteDevice,
+    useUpdateDevicesOnDelete,
+} from "./hooks";
 
 Devices.propTypes = {
     ws: PropTypes.object.isRequired,
 };
 
 export default function Devices({ ws }) {
-    const [devices, deleteDevice, apiState] = useDevices(ws);
+    const [devices, setDevices] = useState([]);
 
+    const [getState, getDevices] = useGetDevices(setDevices);
+    useUpdateDevicesOnAdd(ws, getDevices);
+
+    const [patchState, patchDevice] = usePatchDevice();
+    useUpdateDevicesOnEdit(ws, setDevices);
+
+    const [deleteState, deleteDevice] = useDeleteDevice();
+    useUpdateDevicesOnDelete(ws, setDevices);
+
+    if (getState === API_STATE.INIT
+        || [getState, patchState, deleteState].includes(API_STATE.SENDING)) {
+        return <Spinner />;
+    }
+    if (getState === API_STATE.ERROR) {
+        return <ErrorMessage />;
+    }
     return (
-        <>
-            <h3>{_("Devices")}</h3>
-            <DevicesTable
-                apiState={apiState}
-                devices={devices}
-                onDelete={deleteDevice}
-            />
-        </>
+        <DevicesTable
+            ws={ws}
+            devices={devices}
+            patchDevice={patchDevice}
+            deleteDevice={deleteDevice}
+        />
     );
 }

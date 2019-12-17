@@ -1,0 +1,9 @@
+.devices-table td {
+    vertical-align: middle;
+}
+
+@media (max-width: 1400px) {
+    .devices-table-delete-icon {
+        display: none;
+    }
+}

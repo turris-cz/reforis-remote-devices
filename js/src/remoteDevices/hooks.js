@@ -5,76 +5,32 @@
  * See /LICENSE for more information.
  */
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useCallback } from "react";
 import {
-    useWSForisModule, useAPIDelete, useAlert, API_STATE, useAPIGet,
+    useWSForisModule, useAPIDelete, useAlert, API_STATE, useAPIGet, useAPIPatch,
 } from "foris";
 
 import API_URLs from "API";
 
-export default function useDevices(ws) {
+export function useGetDevices(setDevices) {
     const [getDevicesResponse, getDevices] = useAPIGet(API_URLs.devices);
+
     // Initial data fetch
     useEffect(() => {
         getDevices();
     }, [getDevices]);
 
-    const [devices, setDevices] = useState([]);
-    // Update devices list on API success
+    // Update devices data
     useEffect(() => {
         if (getDevicesResponse.state === API_STATE.SUCCESS) {
             setDevices(getDevicesResponse.data);
         }
-    }, [getDevicesResponse]);
+    }, [getDevicesResponse, setDevices]);
 
-    // Delete devices
-    const [deleteDevice, deleteDeviceState] = useDeleteDevice();
-    const removeDeviceFromTable = useCallback((controller_id) => {
-        setDevices((previousDevices) => {
-            const deleteIndex = previousDevices.findIndex(
-                (device) => device.controller_id === controller_id,
-            );
-            previousDevices.splice(deleteIndex, 1);
-            return [...previousDevices];
-        });
-    }, []);
-
-    // Update devices list when necessary
-    useUpdateOnAdd(ws, getDevices);
-    useUpdateOnDelete(ws, removeDeviceFromTable);
-
-    return [
-        devices,
-        deleteDevice,
-        ignoreDeleteInit(getDevicesResponse.state, deleteDeviceState),
-    ];
+    return [getDevicesResponse.state, getDevices];
 }
 
-/*
- * Return filtered API states. Ignore INIT state of delete hook to avoid
- * displaying spinner when table is in its initial state.
- */
-function ignoreDeleteInit(getState, deleteState) {
-    if (deleteState === API_STATE.INIT) {
-        return getState;
-    }
-    return [getState, deleteState];
-}
-
-function useDeleteDevice() {
-    const [setAlert] = useAlert();
-
-    const [deleteDeviceResponse, deleteDevice] = useAPIDelete(`${API_URLs.devices}`);
-    useEffect(() => {
-        if (deleteDeviceResponse.state === API_STATE.ERROR) {
-            setAlert(deleteDeviceResponse.data);
-        }
-    }, [deleteDeviceResponse, setAlert]);
-
-    return [deleteDevice, deleteDeviceResponse.state];
-}
-
-function useUpdateOnAdd(ws, getDevices) {
+export function useUpdateDevicesOnAdd(ws, getDevices) {
     const [addNotification] = useWSForisModule(ws, "subordinates", "add_sub");
     useEffect(() => {
         if (!addNotification) {
@@ -86,14 +42,100 @@ function useUpdateOnAdd(ws, getDevices) {
     }, [addNotification, getDevices]);
 }
 
-function useUpdateOnDelete(ws, deleteDevice) {
+export function usePatchDevice() {
+    const [setAlert] = useAlert();
+
+    // Handle API request
+    const [patchDeviceResponse, patchDevice] = useAPIPatch(`${API_URLs.devices}`);
+    useEffect(() => {
+        if (patchDeviceResponse.state === API_STATE.ERROR) {
+            setAlert(patchDeviceResponse.data);
+        }
+    }, [patchDeviceResponse, setAlert]);
+
+    return [patchDeviceResponse.state, patchDevice];
+}
+
+export function useUpdateDevicesOnEdit(ws, setDevices) {
+    // Update devices data
+    const editDevice = useCallback((controller_id, { options, enabled }) => {
+        setDevices((previousDevices) => {
+            const devices = [...previousDevices];
+            const editIndex = devices.findIndex(
+                (device) => device.controller_id === controller_id,
+            );
+            if (editIndex !== -1) {
+                const device = { ...devices[editIndex] };
+                if (options) {
+                    device.options = options;
+                }
+                if (enabled !== undefined) { // because "enabled" is boolean
+                    device.enabled = enabled;
+                }
+                devices[editIndex] = device;
+            }
+            return devices;
+        });
+    }, [setDevices]);
+
+    const [updateNotification] = useWSForisModule(ws, "subordinates", "update_sub");
+    useEffect(() => {
+        if (!updateNotification) {
+            return;
+        }
+        if (updateNotification.controller_id) {
+            editDevice(updateNotification.controller_id, { options: updateNotification.options });
+        }
+    }, [editDevice, updateNotification]);
+
+    const [enabledNotification] = useWSForisModule(ws, "subordinates", "set_enabled");
+    useEffect(() => {
+        if (!enabledNotification) {
+            return;
+        }
+        if (enabledNotification.controller_id) {
+            editDevice(enabledNotification.controller_id, { enabled: enabledNotification.enabled });
+        }
+    }, [editDevice, enabledNotification]);
+}
+
+export function useDeleteDevice() {
+    const [setAlert] = useAlert();
+
+    // Handle API request
+    const [deleteDeviceResponse, deleteDevice] = useAPIDelete(`${API_URLs.devices}`);
+    useEffect(() => {
+        if (deleteDeviceResponse.state === API_STATE.ERROR) {
+            setAlert(deleteDeviceResponse.data);
+        }
+    }, [deleteDeviceResponse, setAlert]);
+
+    return [deleteDeviceResponse.state, deleteDevice];
+}
+
+export function useUpdateDevicesOnDelete(ws, setDevices) {
     const [deleteNotification] = useWSForisModule(ws, "subordinates", "del");
+
+    // Update devices data
+    const removeDeviceFromTable = useCallback((controller_id) => {
+        setDevices((previousDevices) => {
+            const devices = [...previousDevices];
+            const deleteIndex = devices.findIndex(
+                (device) => device.controller_id === controller_id,
+            );
+            if (deleteIndex !== -1) {
+                devices.splice(deleteIndex, 1);
+            }
+            return devices;
+        });
+    }, [setDevices]);
+
     useEffect(() => {
         if (!deleteNotification) {
             return;
         }
         if (deleteNotification.controller_id) {
-            deleteDevice(deleteNotification.controller_id);
+            removeDeviceFromTable(deleteNotification.controller_id);
         }
-    }, [deleteDevice, deleteNotification]);
+    }, [removeDeviceFromTable, deleteNotification]);
 }
