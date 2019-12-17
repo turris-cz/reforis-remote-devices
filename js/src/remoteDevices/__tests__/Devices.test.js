@@ -8,14 +8,14 @@
 import React from "react";
 import mockAxios from "jest-mock-axios";
 import {
-    render, fireEvent, act, wait, waitForElement, getByText, getAllByText, getByRole, queryByRole,
-    queryByText,
+    render, fireEvent, act, wait, waitForElement, getByText, getAllByText, getByTitle, getByRole,
+    queryByRole, queryByText, getByDisplayValue,
 } from "foris/testUtils/customTestRender";
 import { mockJSONError } from "foris/testUtils/network";
 import { mockSetAlert } from "foris/testUtils/alertContextMock";
 import { WebSockets } from "foris";
 
-import devices from "./__fixtures__/devices";
+import devices, { createDevice } from "./__fixtures__/devices";
 import Devices from "../Devices";
 
 describe("<Devices />", () => {
@@ -38,7 +38,6 @@ describe("<Devices />", () => {
         mockAxios.mockResponse({ data: devices });
         await waitForElement(() => getByText(container, devices[0].controller_id));
         expect(container).toMatchSnapshot();
-
     });
 
     it("should handle GET error", async () => {
@@ -59,7 +58,7 @@ describe("<Devices />", () => {
             { module: "subordinates", action: "add_sub", data: { controller_id: newID } },
         ));
         expect(mockAxios.get).toHaveBeenNthCalledWith(2, "/reforis/remote-devices/api/devices", expect.anything());
-        mockAxios.mockResponse({ data: [...devices, { controller_id: newID, enabled: true }] });
+        mockAxios.mockResponse({ data: [...devices, createDevice(newID, true, "C")] });
         // New device should appear
         await wait(() => getByText(container, newID));
     });
@@ -121,6 +120,123 @@ describe("<Devices />", () => {
         await wait(() => getByText(container, devices[0].controller_id));
         // Delete device
         fireEvent.click(getAllByText(container, "Delete")[0]);
+        // Handle error
+        const errorMessage = "API didn't handle this well";
+        mockJSONError(errorMessage);
+        await wait(() => {
+            expect(mockSetAlert).toHaveBeenCalledWith(errorMessage);
+        });
+    });
+
+    it("should refresh table after device is toggled", async () => {
+        // Prepare table
+        const device = devices[0];
+        const toggledID = device.controller_id;
+        mockAxios.mockResponse({ data: [device] });
+        await wait(() => getByText(container, toggledID));
+
+        // Toggle device
+        fireEvent.click(getByText(container, "Yes"));
+        expect(mockAxios.patch).toBeCalledWith(
+            `/reforis/remote-devices/api/devices/${toggledID}`, { enabled: !device.enabled },
+            expect.anything(),
+        );
+        mockAxios.mockResponse({ data: {} });
+        await wait(() => getByText(container, toggledID));
+
+        act(() => webSockets.dispatch(
+            { module: "subordinates", action: "set_enabled", data: { controller_id: toggledID, enabled: !device.enabled } },
+        ));
+        // Device should not be managed anymore
+        expect(getByText(container, "No")).toBeDefined();
+    });
+
+    it("should display spinner while device is being toggled", async () => {
+        // Prepare table
+        mockAxios.mockResponse({ data: devices });
+        // Initially there's no spinner
+        await wait(() => expect(
+            queryByRole(container, "status"),
+        ).toBeNull());
+        // Toggle device
+        fireEvent.click(getAllByText(container, "Yes")[0]);
+        // Spinner should appear
+        await wait(() => getByRole(container, "status"));
+    });
+
+    it("should handle error on toggle", async () => {
+        // Prepare table
+        const device = devices[0];
+        mockAxios.mockResponse({ data: [device] });
+        await wait(() => getByText(container, device.controller_id));
+        // Toggle device
+        fireEvent.click(getByText(container, "Yes"));
+        // Handle error
+        const errorMessage = "API didn't handle this well";
+        mockJSONError(errorMessage);
+        await wait(() => {
+            expect(mockSetAlert).toHaveBeenCalledWith(errorMessage);
+        });
+    });
+
+    it("should refresh table after device name is edited", async () => {
+        // Prepare table
+        const device = devices[0];
+        const editedID = device.controller_id;
+        mockAxios.mockResponse({ data: [device] });
+        await wait(() => getByText(container, editedID));
+
+        // Edit name
+        fireEvent.click(getByTitle(container, "Edit name"));
+        const nameInput = getByDisplayValue(container, device.options.custom_name);
+        const newName = "qwerty";
+        fireEvent.change(nameInput, { target: { value: newName } });
+        fireEvent.click(getByTitle(container, "Save changes"));
+
+        expect(mockAxios.patch).toBeCalledWith(
+            `/reforis/remote-devices/api/devices/${editedID}`, { options: { custom_name: newName } },
+            expect.anything(),
+        );
+        mockAxios.mockResponse({ data: {} });
+        await wait(() => getByText(container, editedID));
+
+        act(() => webSockets.dispatch(
+            { module: "subordinates", action: "update_sub", data: { controller_id: editedID, options: { custom_name: newName } } },
+        ));
+        // Device should not be managed anymore
+        expect(getByDisplayValue(container, newName)).toBeDefined();
+    });
+
+    it("should display spinner while device name is being edited", async () => {
+        // Prepare table
+        mockAxios.mockResponse({ data: [devices[0]] });
+
+        // Initially there's no spinner
+        await wait(() => expect(
+            queryByRole(container, "status"),
+        ).toBeNull());
+
+        // Edit name
+        fireEvent.click(getByTitle(container, "Edit name"));
+        const nameInput = getByDisplayValue(container, devices[0].options.custom_name);
+        const newName = "qwerty";
+        fireEvent.change(nameInput, { target: { value: newName } });
+        fireEvent.click(getByTitle(container, "Save changes"));
+
+        // Spinner should appear
+        await wait(() => getByRole(container, "status"));
+    });
+
+    it("should handle error on name edit", async () => {
+        // Prepare table
+        const device = devices[0];
+        mockAxios.mockResponse({ data: [device] });
+        await wait(() => getByText(container, device.controller_id));
+        // Edit name
+        fireEvent.click(getByTitle(container, "Edit name"));
+        const nameInput = getByDisplayValue(container, device.options.custom_name);
+        fireEvent.change(nameInput, { target: { value: "Foobar" } });
+        fireEvent.click(getByTitle(container, "Save changes"));
         // Handle error
         const errorMessage = "API didn't handle this well";
         mockJSONError(errorMessage);
