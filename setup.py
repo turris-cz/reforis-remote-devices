@@ -32,7 +32,7 @@ class RemoteDevicesBuild(build_py):
 
 setuptools.setup(
     name=NAME,
-    version='0.1.0',
+    version='1.0.0',
     packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
 

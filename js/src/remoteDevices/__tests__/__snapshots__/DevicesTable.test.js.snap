@@ -13,7 +13,7 @@ exports[`<DevicesTable /> should handle empty devices list 1`] = `
 exports[`<DevicesTable /> should render devices table 1`] = `
 <div>
   <div
-    class="table-responsive"
+    class="table-responsive pb-2"
   >
     <table
       class="table table-hover devices-table"
@@ -53,7 +53,9 @@ exports[`<DevicesTable /> should render devices table 1`] = `
           <td>
             A1
           </td>
-          <td>
+          <td
+            class="editable-name"
+          >
             <form
               class="editable-name-form"
             >
@@ -130,7 +132,9 @@ exports[`<DevicesTable /> should render devices table 1`] = `
           <td>
             A2
           </td>
-          <td>
+          <td
+            class="editable-name"
+          >
             <form
               class="editable-name-form"
             >
@@ -206,7 +210,9 @@ exports[`<DevicesTable /> should render devices table 1`] = `
           <td>
             B1
           </td>
-          <td>
+          <td
+            class="editable-name"
+          >
             <form
               class="editable-name-form"
             >
@@ -283,7 +289,9 @@ exports[`<DevicesTable /> should render devices table 1`] = `
           <td>
             B2
           </td>
-          <td>
+          <td
+            class="editable-name"
+          >
             <form
               class="editable-name-form"
             >

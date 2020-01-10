@@ -20,7 +20,7 @@ exports[`<Devices /> should render spinner 1`] = `
 exports[`<Devices /> should render table 1`] = `
 <div>
   <div
-    class="table-responsive"
+    class="table-responsive pb-2"
   >
     <table
       class="table table-hover devices-table"
@@ -60,7 +60,9 @@ exports[`<Devices /> should render table 1`] = `
           <td>
             A1
           </td>
-          <td>
+          <td
+            class="editable-name"
+          >
             <form
               class="editable-name-form"
             >
@@ -137,7 +139,9 @@ exports[`<Devices /> should render table 1`] = `
           <td>
             A2
           </td>
-          <td>
+          <td
+            class="editable-name"
+          >
             <form
               class="editable-name-form"
             >
@@ -213,7 +217,9 @@ exports[`<Devices /> should render table 1`] = `
           <td>
             B1
           </td>
-          <td>
+          <td
+            class="editable-name"
+          >
             <form
               class="editable-name-form"
             >
@@ -290,7 +296,9 @@ exports[`<Devices /> should render table 1`] = `
           <td>
             B2
           </td>
-          <td>
+          <td
+            class="editable-name"
+          >
             <form
               class="editable-name-form"
             >

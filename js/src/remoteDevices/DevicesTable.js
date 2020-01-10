@@ -35,7 +35,8 @@ function DevicesTable({
     }
 
     return (
-        <div className="table-responsive">
+        // Bottom padding is required to prevent unnecessary vertical scroll when editor is active
+        <div className="table-responsive pb-2">
             <table className="table table-hover devices-table">
                 <thead>
                     <tr>
@@ -90,7 +91,7 @@ function DeviceRow({
     return (
         <tr>
             <td>{ device.controller_id }</td>
-            <td>
+            <td className="editable-name">
                 <EditableName name={device.options.custom_name} patchDevice={patchDevice} />
             </td>
             <td className="text-center">

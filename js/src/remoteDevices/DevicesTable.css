@@ -7,3 +7,7 @@
         display: none;
     }
 }
+
+.editable-name {
+    min-width: 10rem;
+}
