@@ -18,7 +18,7 @@ RemoteDevices.propTypes = {
 export default function RemoteDevices({ ws }) {
     return (
         <>
-            <h1>{_("Remote Devices")}</h1>
+            <h1>{_("Devices List")}</h1>
             <p>{_("You can set up other Turris routers to be managed remotely by this device.")}</p>
             <p>{_("To authorize your router you will need a token which can be obtained with \"Remote Access\" plugin on target device.")}</p>
             <AddDeviceForm />

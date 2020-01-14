@@ -11,8 +11,15 @@ const RemoteDevicesPlugin = {
     name: _("Remote Devices"),
     weight: 100,
     path: "/remote-devices",
-    component: RemoteDevices,
+    submenuId: "remote-devices",
     icon: "server",
+    pages: [
+        {
+            name: "Devices List",
+            path: "/devices-list",
+            component: RemoteDevices,
+        },
+    ],
 };
 
 ForisPlugins.push(RemoteDevicesPlugin);

@@ -3,7 +3,7 @@
 exports[`<RemoteDevices /> should render component 1`] = `
 <div>
   <h1>
-    Remote Devices
+    Devices List
   </h1>
   <p>
     You can set up other Turris routers to be managed remotely by this device.
