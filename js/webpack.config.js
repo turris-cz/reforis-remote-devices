@@ -19,8 +19,8 @@ module.exports = () => ({
     resolve: {
         modules: [
             path.resolve(__dirname, "./src"),
-            path.resolve(__dirname, "./node_modules")
-        ]
+            path.resolve(__dirname, "./node_modules"),
+        ],
     },
     module: {
         rules: [
@@ -40,5 +40,6 @@ module.exports = () => ({
         "prop-types": "PropTypes",
         react: "React",
         "react-dom": "ReactDOM",
+        "react-router-dom": "ReactRouterDOM",
     },
 });
