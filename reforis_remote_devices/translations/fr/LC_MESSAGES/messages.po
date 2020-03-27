@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-01-31 16:40+0100\n"
-"PO-Revision-Date: 2020-03-18 12:36+0000\n"
-"Last-Translator: XoD DarK <xod@xoddark.com>\n"
+"PO-Revision-Date: 2020-03-28 22:09+0000\n"
+"Last-Translator: Éfrit <Efrit@posteo.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/turris/"
 "reforis-remote-devices-plugin/fr/>\n"
 "Language: fr\n"
@@ -134,9 +134,8 @@ msgid "Edit name"
 msgstr "Renommer"
 
 #: reforis_remote_devices/__init__.py:43
-#, fuzzy
 msgid "Missing data for 'token' file."
-msgstr "Données manquantes pour le fichier 'token'."
+msgstr "Données manquantes pour le fichier « jeton »."
 
 #: reforis_remote_devices/__init__.py:53
 msgid "Cannot add remote device token. Check if device is already added."
