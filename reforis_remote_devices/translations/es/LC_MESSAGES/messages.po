@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-01-31 16:40+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-05-25 09:41+0000\n"
+"Last-Translator: Eduardo Cuthbert <elguber@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/turris/"
+"reforis-remote-devices-plugin/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.1-dev\n"
 "Generated-By: Babel 2.8.0\n"
 
 #: js/src/app.js:11
@@ -61,7 +64,7 @@ msgstr ""
 
 #: js/src/remoteDevices/DevicesTable.js:44
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #: js/src/remoteDevices/DevicesTable.js:45
 msgid "Status"
@@ -74,11 +77,11 @@ msgstr ""
 #: js/src/remoteDevices/DevicesTable.js:47
 #: js/src/remoteDevices/DevicesTable.js:111
 msgid "Delete"
-msgstr ""
+msgstr "Borrar"
 
 #: js/src/remoteDevices/DevicesTable.js:124
 msgid "Unknown status"
-msgstr ""
+msgstr "Estado desconocido"
 
 #: js/src/remoteDevices/DevicesTable.js:127
 msgid "Started"
