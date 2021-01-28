@@ -7,7 +7,11 @@
 
 import React from "react";
 import mockAxios from "jest-mock-axios";
-import { render, waitForElement, getByText } from "foris/testUtils/customTestRender";
+import {
+    render,
+    waitForElement,
+    getByText,
+} from "foris/testUtils/customTestRender";
 import { WebSockets } from "foris";
 
 import RemoteDevices from "../RemoteDevices";
@@ -16,9 +20,14 @@ describe("<RemoteDevices />", () => {
     it("should render component", async () => {
         const webSockets = new WebSockets();
         const { container } = render(<RemoteDevices ws={webSockets} />);
-        expect(mockAxios.get).toBeCalledWith("/reforis/remote-devices/api/devices", expect.anything());
+        expect(mockAxios.get).toBeCalledWith(
+            "/reforis/remote-devices/api/devices",
+            expect.anything()
+        );
         mockAxios.mockResponse({ data: [] });
-        await waitForElement(() => getByText(container, "No devices added yet."));
+        await waitForElement(() =>
+            getByText(container, "No devices added yet.")
+        );
         expect(container).toMatchSnapshot();
     });
 });

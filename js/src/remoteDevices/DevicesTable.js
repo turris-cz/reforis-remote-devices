@@ -27,11 +27,13 @@ DevicesTable.propTypes = {
     patchDevice: PropTypes.func.isRequired,
 };
 
-function DevicesTable({
-    ws, devices, deleteDevice, patchDevice,
-}) {
+function DevicesTable({ ws, devices, deleteDevice, patchDevice }) {
     if (!devices || devices.length === 0) {
-        return <p className="text-muted text-center">{_("No devices added yet.")}</p>;
+        return (
+            <p className="text-muted text-center">
+                {_("No devices added yet.")}
+            </p>
+        );
     }
 
     return (
@@ -42,25 +44,32 @@ function DevicesTable({
                     <tr>
                         <th scope="col">{_("ID")}</th>
                         <th scope="col">{_("Name")}</th>
-                        <th scope="col" className="text-center">{_("Status")}</th>
-                        <th scope="col" className="text-center">{_("Managed")}</th>
+                        <th scope="col" className="text-center">
+                            {_("Status")}
+                        </th>
+                        <th scope="col" className="text-center">
+                            {_("Managed")}
+                        </th>
                         <th scope="col" aria-label={_("Delete")} />
                     </tr>
                 </thead>
                 <tbody>
-                    {devices.map(
-                        (device) => (
-                            <DeviceRow
-                                key={device.controller_id}
-                                ws={ws}
-                                device={device}
-                                deleteDevice={() => deleteDevice({ suffix: device.controller_id })}
-                                patchDevice={
-                                    (data) => patchDevice({ data, suffix: device.controller_id })
-                                }
-                            />
-                        ),
-                    )}
+                    {devices.map((device) => (
+                        <DeviceRow
+                            key={device.controller_id}
+                            ws={ws}
+                            device={device}
+                            deleteDevice={() =>
+                                deleteDevice({ suffix: device.controller_id })
+                            }
+                            patchDevice={(data) =>
+                                patchDevice({
+                                    data,
+                                    suffix: device.controller_id,
+                                })
+                            }
+                        />
+                    ))}
                 </tbody>
             </table>
         </div>
@@ -76,27 +85,34 @@ DeviceRow.propTypes = {
     patchDevice: PropTypes.func.isRequired,
 };
 
-function DeviceRow({
-    ws, device, deleteDevice, patchDevice,
-}) {
+function DeviceRow({ ws, device, deleteDevice, patchDevice }) {
     const [status, setStatus] = useState();
 
     const [advertizeNotification] = useWSForisModule(ws, "remote", "advertize");
     useEffect(() => {
-        if (advertizeNotification && advertizeNotification.id === device.controller_id) {
+        if (
+            advertizeNotification &&
+            advertizeNotification.id === device.controller_id
+        ) {
             setStatus(advertizeNotification.state);
         }
     }, [advertizeNotification, device.controller_id, status]);
 
     return (
         <tr>
-            <td>{ device.controller_id }</td>
+            <td>{device.controller_id}</td>
             <td className="editable-name">
-                <EditableName name={device.options.custom_name} patchDevice={patchDevice} />
+                <EditableName
+                    name={device.options.custom_name}
+                    patchDevice={patchDevice}
+                />
             </td>
             <td className="text-center">
                 {/* "key" is necessary to update the icon, see https://stackoverflow.com/q/47722813/6324591 */}
-                <StatusIcon status={status} key={`${device.controller_id}-${status}`} />
+                <StatusIcon
+                    status={status}
+                    key={`${device.controller_id}-${status}`}
+                />
             </td>
             <td className="text-center">
                 <ToggleDevice
