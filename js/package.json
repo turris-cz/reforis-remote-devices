@@ -10,7 +10,7 @@
     "description": "reForis Remote Devices Plugin",
     "main": "./src/app.js",
     "dependencies": {
-        "foris": "^4.5.0"
+        "foris": "^5.1.11"
     },
     "peerDependencies": {
         "prop-types": "15.7.2",
