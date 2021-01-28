@@ -1,52 +1,55 @@
 {
-  "name": "reforis_remote_devices",
-  "author": "CZ.NIC, z.s.p.o.",
-  "repository": {
-    "type": "git",
-    "url": "https://gitlab.nic.cz/turris/reforis/reforis-remote-devices.git"
-  },
-  "license": "GPL-3.0",
-  "version": "1.3.1",
-  "description": "reForis Remote Devices Plugin",
-  "main": "./src/app.js",
-  "dependencies": {
-    "foris": "^4.5.0"
-  },
-  "peerDependencies": {
-    "prop-types": "15.7.2",
-    "react": "16.9.0",
-    "react-dom": "16.9.0",
-    "react-router-dom": "^5.1.2"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.12.13",
-    "@babel/core": "^7.9.0",
-    "@babel/plugin-transform-runtime": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "@babel/preset-react": "^7.9.4",
-    "@testing-library/react": "^8.0.9",
-    "babel-loader": "^8.1.0",
-    "css-loader": "^3.4.2",
-    "eslint": "^6.8.0",
-    "eslint-config-reforis": "^1.0.0",
-    "jest": "^25.2.1",
-    "jest-mock-axios": "^3.2.0",
-    "moment-timezone": "^0.5.28",
-    "prop-types": "15.7.2",
-    "react": "16.9.0",
-    "react-dom": "16.9.0",
-    "react-router-dom": "^5.1.2",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
-  },
-  "scripts": {
-    "watch": "webpack --watch --mode=development",
-    "build": "webpack --mode=production",
-    "lint": "eslint src",
-    "lint:fix": "eslint --fix src",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage --colors"
-  }
+    "name": "reforis_remote_devices",
+    "author": "CZ.NIC, z.s.p.o.",
+    "repository": {
+      "type": "git",
+      "url": "https://gitlab.nic.cz/turris/reforis/reforis-remote-devices.git"
+    },
+    "license": "GPL-3.0",
+    "version": "1.3.0",
+    "description": "reForis Remote Devices Plugin",
+    "main": "./src/app.js",
+    "dependencies": {
+        "foris": "^4.5.0"
+    },
+    "peerDependencies": {
+        "prop-types": "15.7.2",
+        "react": "16.9.0",
+        "react-dom": "16.9.0",
+        "react-router-dom": "^5.1.2"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.8.4",
+        "@babel/core": "^7.9.0",
+        "@babel/plugin-transform-runtime": "^7.9.0",
+        "@babel/preset-env": "^7.9.0",
+        "@babel/preset-react": "^7.9.4",
+        "@testing-library/react": "^8.0.9",
+        "babel-loader": "^8.1.0",
+        "css-loader": "^3.4.2",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^7.2.0",
+        "eslint-config-reforis": "^1.0.0",
+        "eslint-plugin-prettier": "^3.3.1",
+        "jest": "^25.2.1",
+        "jest-mock-axios": "^3.2.0",
+        "moment-timezone": "^0.5.28",
+        "prettier": "^2.2.1",
+        "prop-types": "15.7.2",
+        "react": "16.9.0",
+        "react-dom": "16.9.0",
+        "react-router-dom": "^5.1.2",
+        "style-loader": "^0.23.1",
+        "webpack": "^4.42.1",
+        "webpack-cli": "^3.3.11"
+    },
+    "scripts": {
+        "watch": "webpack --watch --mode=development",
+        "build": "webpack --mode=production",
+        "lint": "eslint src",
+        "lint:fix": "eslint --fix src",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage --colors"
+    }
 }
