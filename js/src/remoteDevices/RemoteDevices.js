@@ -26,7 +26,7 @@ export default function RemoteDevices({ ws }) {
             </p>
             <p>
                 {_(
-                    'To authorize your router you will need a token which can be obtained with "Remote Access" plugin on target device.'
+                    'To authorize your router, you will need a token file that can be obtained with the "Remote Access" plugin on the target device.'
                 )}
             </p>
             <AddDeviceForm />
