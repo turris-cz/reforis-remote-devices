@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -40,7 +40,7 @@ function DevicesTable({ ws, devices, deleteDevice, patchDevice }) {
         // Bottom padding is required to prevent unnecessary vertical scroll when editor is active
         <div className="table-responsive pb-2">
             <table className="table table-hover devices-table">
-                <thead>
+                <thead className="thead-light">
                     <tr>
                         <th scope="col">{_("ID")}</th>
                         <th scope="col">{_("Name")}</th>
@@ -50,7 +50,11 @@ function DevicesTable({ ws, devices, deleteDevice, patchDevice }) {
                         <th scope="col" className="text-center">
                             {_("Managed")}
                         </th>
-                        <th scope="col" aria-label={_("Delete")} />
+                        <th
+                            scope="col"
+                            className="text-right"
+                            aria-label={_("Delete")}
+                        />
                     </tr>
                 </thead>
                 <tbody>
@@ -59,15 +63,15 @@ function DevicesTable({ ws, devices, deleteDevice, patchDevice }) {
                             key={device.controller_id}
                             ws={ws}
                             device={device}
-                            deleteDevice={() =>
-                                deleteDevice({ suffix: device.controller_id })
-                            }
-                            patchDevice={(data) =>
+                            deleteDevice={() => {
+                                deleteDevice({ suffix: device.controller_id });
+                            }}
+                            patchDevice={(data) => {
                                 patchDevice({
                                     data,
                                     suffix: device.controller_id,
-                                })
-                            }
+                                });
+                            }}
                         />
                     ))}
                 </tbody>
