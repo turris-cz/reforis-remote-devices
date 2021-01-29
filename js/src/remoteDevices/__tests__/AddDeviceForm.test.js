@@ -21,7 +21,7 @@ import AddDeviceForm from "../AddDeviceForm";
 
 function getFormElements(container) {
     return {
-        fileInput: getByLabelText(container, "Token file"),
+        fileInput: getByLabelText(container, "Choose token file"),
         submitButton: getByText(container, "Upload token"),
     };
 }
@@ -67,7 +67,7 @@ describe("<AddDeviceForm />", () => {
         expect(
             getByText(
                 container,
-                "Filename must be at least 1 and at most 50 characters long."
+                "The filename must be at least 1 and at most 50 characters long."
             )
         ).toBeDefined();
         expect(submitButton.disabled).toBe(true);
@@ -78,7 +78,7 @@ describe("<AddDeviceForm />", () => {
         expect(
             getByText(
                 container,
-                "Filename can contain only alphanumeric characters, dots, dashes and underscores."
+                "The filename can contain only alphanumeric characters, dots, dashes, and underscores."
             )
         ).toBeDefined();
         expect(submitButton.disabled).toBe(true);
@@ -89,7 +89,10 @@ describe("<AddDeviceForm />", () => {
         ]);
         fireEvent.change(fileInput);
         expect(
-            getByText(container, "File is too big. Maximum size is 1 MB.")
+            getByText(
+                container,
+                "The file is too big. The maximum size is 1 MB."
+            )
         ).toBeDefined();
         expect(submitButton.disabled).toBe(true);
     });
