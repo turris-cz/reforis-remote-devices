@@ -18,7 +18,9 @@ exports[`<DevicesTable /> should render devices table 1`] = `
     <table
       class="table table-hover devices-table"
     >
-      <thead>
+      <thead
+        class="thead-light"
+      >
         <tr>
           <th
             scope="col"
@@ -44,6 +46,7 @@ exports[`<DevicesTable /> should render devices table 1`] = `
           </th>
           <th
             aria-label="Delete"
+            class="text-right"
             scope="col"
           />
         </tr>
@@ -76,8 +79,6 @@ exports[`<DevicesTable /> should render devices table 1`] = `
                 title="Edit name"
                 type="button"
               >
-                 
-                 
                 <i
                   class="fa fa-edit text-muted"
                 />
@@ -119,8 +120,6 @@ exports[`<DevicesTable /> should render devices table 1`] = `
               class="btn btn-sm btn-danger"
               type="button"
             >
-               
-               
               <i
                 class="fa fa-trash-alt mr-2 devices-table-delete-icon"
               />
@@ -155,8 +154,6 @@ exports[`<DevicesTable /> should render devices table 1`] = `
                 title="Edit name"
                 type="button"
               >
-                 
-                 
                 <i
                   class="fa fa-edit text-muted"
                 />
@@ -197,8 +194,6 @@ exports[`<DevicesTable /> should render devices table 1`] = `
               class="btn btn-sm btn-danger"
               type="button"
             >
-               
-               
               <i
                 class="fa fa-trash-alt mr-2 devices-table-delete-icon"
               />
@@ -233,8 +228,6 @@ exports[`<DevicesTable /> should render devices table 1`] = `
                 title="Edit name"
                 type="button"
               >
-                 
-                 
                 <i
                   class="fa fa-edit text-muted"
                 />
@@ -276,8 +269,6 @@ exports[`<DevicesTable /> should render devices table 1`] = `
               class="btn btn-sm btn-danger"
               type="button"
             >
-               
-               
               <i
                 class="fa fa-trash-alt mr-2 devices-table-delete-icon"
               />
@@ -312,8 +303,6 @@ exports[`<DevicesTable /> should render devices table 1`] = `
                 title="Edit name"
                 type="button"
               >
-                 
-                 
                 <i
                   class="fa fa-edit text-muted"
                 />
@@ -354,8 +343,6 @@ exports[`<DevicesTable /> should render devices table 1`] = `
               class="btn btn-sm btn-danger"
               type="button"
             >
-               
-               
               <i
                 class="fa fa-trash-alt mr-2 devices-table-delete-icon"
               />

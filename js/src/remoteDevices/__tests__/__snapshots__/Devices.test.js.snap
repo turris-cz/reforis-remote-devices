@@ -20,358 +20,352 @@ exports[`<Devices /> should render spinner 1`] = `
 exports[`<Devices /> should render table 1`] = `
 <div>
   <div
-    class="table-responsive pb-2"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
-    <table
-      class="table table-hover devices-table"
+    <h2>
+      Devices List
+    </h2>
+    <div
+      class="table-responsive pb-2"
     >
-      <thead>
-        <tr>
-          <th
-            scope="col"
-          >
-            ID
-          </th>
-          <th
-            scope="col"
-          >
-            Name
-          </th>
-          <th
-            class="text-center"
-            scope="col"
-          >
-            Status
-          </th>
-          <th
-            class="text-center"
-            scope="col"
-          >
-            Managed
-          </th>
-          <th
-            aria-label="Delete"
-            scope="col"
-          />
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            A1
-          </td>
-          <td
-            class="editable-name"
-          >
-            <form
-              class="editable-name-form"
+      <table
+        class="table table-hover devices-table"
+      >
+        <thead
+          class="thead-light"
+        >
+          <tr>
+            <th
+              scope="col"
+            >
+              ID
+            </th>
+            <th
+              scope="col"
+            >
+              Name
+            </th>
+            <th
+              class="text-center"
+              scope="col"
+            >
+              Status
+            </th>
+            <th
+              class="text-center"
+              scope="col"
+            >
+              Managed
+            </th>
+            <th
+              aria-label="Delete"
+              class="text-right"
+              scope="col"
+            />
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              A1
+            </td>
+            <td
+              class="editable-name"
+            >
+              <form
+                class="editable-name-form"
+              >
+                <div
+                  class="editable-name-input-wrapper"
+                >
+                  <input
+                    class="editable-name-input-disabled"
+                    maxlength="30"
+                    placeholder="Custom name"
+                    readonly=""
+                    type="text"
+                    value="A"
+                  />
+                </div>
+                <button
+                  class="btn btn-link"
+                  title="Edit name"
+                  type="button"
+                >
+                  <i
+                    class="fa fa-edit text-muted"
+                  />
+                </button>
+              </form>
+            </td>
+            <td
+              class="text-center"
+            >
+              <span>
+                <i
+                  class="fa fa-lg fa-question-circle text-warning"
+                  title="Unknown status"
+                />
+              </span>
+            </td>
+            <td
+              class="text-center"
             >
               <div
-                class="editable-name-input-wrapper"
+                class="custom-control custom-switch"
               >
                 <input
-                  class="editable-name-input-disabled"
-                  maxlength="30"
-                  placeholder="Custom name"
-                  readonly=""
-                  type="text"
-                  value="A"
+                  checked=""
+                  class="custom-control-input"
+                  id="toggle-A1"
+                  type="checkbox"
                 />
+                <label
+                  class="custom-control-label"
+                  for="toggle-A1"
+                >
+                  Yes
+                </label>
               </div>
+            </td>
+            <td>
               <button
-                class="btn btn-link"
-                title="Edit name"
+                class="btn btn-sm btn-danger"
                 type="button"
               >
-                 
-                 
                 <i
-                  class="fa fa-edit text-muted"
+                  class="fa fa-trash-alt mr-2 devices-table-delete-icon"
                 />
+                Delete
               </button>
-            </form>
-          </td>
-          <td
-            class="text-center"
-          >
-            <span>
-              <i
-                class="fa fa-lg fa-question-circle text-warning"
-                title="Unknown status"
-              />
-            </span>
-          </td>
-          <td
-            class="text-center"
-          >
-            <div
-              class="custom-control custom-switch"
+            </td>
+          </tr>
+          <tr>
+            <td>
+              A2
+            </td>
+            <td
+              class="editable-name"
             >
-              <input
-                checked=""
-                class="custom-control-input"
-                id="toggle-A1"
-                type="checkbox"
-              />
-              <label
-                class="custom-control-label"
-                for="toggle-A1"
+              <form
+                class="editable-name-form"
               >
-                Yes
-              </label>
-            </div>
-          </td>
-          <td>
-            <button
-              class="btn btn-sm btn-danger"
-              type="button"
+                <div
+                  class="editable-name-input-wrapper"
+                >
+                  <input
+                    class="editable-name-input-disabled"
+                    maxlength="30"
+                    placeholder="Custom name"
+                    readonly=""
+                    type="text"
+                    value="A"
+                  />
+                </div>
+                <button
+                  class="btn btn-link"
+                  title="Edit name"
+                  type="button"
+                >
+                  <i
+                    class="fa fa-edit text-muted"
+                  />
+                </button>
+              </form>
+            </td>
+            <td
+              class="text-center"
             >
-               
-               
-              <i
-                class="fa fa-trash-alt mr-2 devices-table-delete-icon"
-              />
-              Delete
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            A2
-          </td>
-          <td
-            class="editable-name"
-          >
-            <form
-              class="editable-name-form"
+              <span>
+                <i
+                  class="fa fa-lg fa-question-circle text-warning"
+                  title="Unknown status"
+                />
+              </span>
+            </td>
+            <td
+              class="text-center"
             >
               <div
-                class="editable-name-input-wrapper"
+                class="custom-control custom-switch"
               >
                 <input
-                  class="editable-name-input-disabled"
-                  maxlength="30"
-                  placeholder="Custom name"
-                  readonly=""
-                  type="text"
-                  value="A"
+                  class="custom-control-input"
+                  id="toggle-A2"
+                  type="checkbox"
                 />
+                <label
+                  class="custom-control-label"
+                  for="toggle-A2"
+                >
+                  No
+                </label>
               </div>
+            </td>
+            <td>
               <button
-                class="btn btn-link"
-                title="Edit name"
+                class="btn btn-sm btn-danger"
                 type="button"
               >
-                 
-                 
                 <i
-                  class="fa fa-edit text-muted"
+                  class="fa fa-trash-alt mr-2 devices-table-delete-icon"
                 />
+                Delete
               </button>
-            </form>
-          </td>
-          <td
-            class="text-center"
-          >
-            <span>
-              <i
-                class="fa fa-lg fa-question-circle text-warning"
-                title="Unknown status"
-              />
-            </span>
-          </td>
-          <td
-            class="text-center"
-          >
-            <div
-              class="custom-control custom-switch"
+            </td>
+          </tr>
+          <tr>
+            <td>
+              B1
+            </td>
+            <td
+              class="editable-name"
             >
-              <input
-                class="custom-control-input"
-                id="toggle-A2"
-                type="checkbox"
-              />
-              <label
-                class="custom-control-label"
-                for="toggle-A2"
+              <form
+                class="editable-name-form"
               >
-                No
-              </label>
-            </div>
-          </td>
-          <td>
-            <button
-              class="btn btn-sm btn-danger"
-              type="button"
+                <div
+                  class="editable-name-input-wrapper"
+                >
+                  <input
+                    class="editable-name-input-disabled"
+                    maxlength="30"
+                    placeholder="Custom name"
+                    readonly=""
+                    type="text"
+                    value="B"
+                  />
+                </div>
+                <button
+                  class="btn btn-link"
+                  title="Edit name"
+                  type="button"
+                >
+                  <i
+                    class="fa fa-edit text-muted"
+                  />
+                </button>
+              </form>
+            </td>
+            <td
+              class="text-center"
             >
-               
-               
-              <i
-                class="fa fa-trash-alt mr-2 devices-table-delete-icon"
-              />
-              Delete
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            B1
-          </td>
-          <td
-            class="editable-name"
-          >
-            <form
-              class="editable-name-form"
+              <span>
+                <i
+                  class="fa fa-lg fa-question-circle text-warning"
+                  title="Unknown status"
+                />
+              </span>
+            </td>
+            <td
+              class="text-center"
             >
               <div
-                class="editable-name-input-wrapper"
+                class="custom-control custom-switch"
               >
                 <input
-                  class="editable-name-input-disabled"
-                  maxlength="30"
-                  placeholder="Custom name"
-                  readonly=""
-                  type="text"
-                  value="B"
+                  checked=""
+                  class="custom-control-input"
+                  id="toggle-B1"
+                  type="checkbox"
                 />
+                <label
+                  class="custom-control-label"
+                  for="toggle-B1"
+                >
+                  Yes
+                </label>
               </div>
+            </td>
+            <td>
               <button
-                class="btn btn-link"
-                title="Edit name"
+                class="btn btn-sm btn-danger"
                 type="button"
               >
-                 
-                 
                 <i
-                  class="fa fa-edit text-muted"
+                  class="fa fa-trash-alt mr-2 devices-table-delete-icon"
                 />
+                Delete
               </button>
-            </form>
-          </td>
-          <td
-            class="text-center"
-          >
-            <span>
-              <i
-                class="fa fa-lg fa-question-circle text-warning"
-                title="Unknown status"
-              />
-            </span>
-          </td>
-          <td
-            class="text-center"
-          >
-            <div
-              class="custom-control custom-switch"
+            </td>
+          </tr>
+          <tr>
+            <td>
+              B2
+            </td>
+            <td
+              class="editable-name"
             >
-              <input
-                checked=""
-                class="custom-control-input"
-                id="toggle-B1"
-                type="checkbox"
-              />
-              <label
-                class="custom-control-label"
-                for="toggle-B1"
+              <form
+                class="editable-name-form"
               >
-                Yes
-              </label>
-            </div>
-          </td>
-          <td>
-            <button
-              class="btn btn-sm btn-danger"
-              type="button"
+                <div
+                  class="editable-name-input-wrapper"
+                >
+                  <input
+                    class="editable-name-input-disabled"
+                    maxlength="30"
+                    placeholder="Custom name"
+                    readonly=""
+                    type="text"
+                    value="B"
+                  />
+                </div>
+                <button
+                  class="btn btn-link"
+                  title="Edit name"
+                  type="button"
+                >
+                  <i
+                    class="fa fa-edit text-muted"
+                  />
+                </button>
+              </form>
+            </td>
+            <td
+              class="text-center"
             >
-               
-               
-              <i
-                class="fa fa-trash-alt mr-2 devices-table-delete-icon"
-              />
-              Delete
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            B2
-          </td>
-          <td
-            class="editable-name"
-          >
-            <form
-              class="editable-name-form"
+              <span>
+                <i
+                  class="fa fa-lg fa-question-circle text-warning"
+                  title="Unknown status"
+                />
+              </span>
+            </td>
+            <td
+              class="text-center"
             >
               <div
-                class="editable-name-input-wrapper"
+                class="custom-control custom-switch"
               >
                 <input
-                  class="editable-name-input-disabled"
-                  maxlength="30"
-                  placeholder="Custom name"
-                  readonly=""
-                  type="text"
-                  value="B"
+                  class="custom-control-input"
+                  id="toggle-B2"
+                  type="checkbox"
                 />
+                <label
+                  class="custom-control-label"
+                  for="toggle-B2"
+                >
+                  No
+                </label>
               </div>
+            </td>
+            <td>
               <button
-                class="btn btn-link"
-                title="Edit name"
+                class="btn btn-sm btn-danger"
                 type="button"
               >
-                 
-                 
                 <i
-                  class="fa fa-edit text-muted"
+                  class="fa fa-trash-alt mr-2 devices-table-delete-icon"
                 />
+                Delete
               </button>
-            </form>
-          </td>
-          <td
-            class="text-center"
-          >
-            <span>
-              <i
-                class="fa fa-lg fa-question-circle text-warning"
-                title="Unknown status"
-              />
-            </span>
-          </td>
-          <td
-            class="text-center"
-          >
-            <div
-              class="custom-control custom-switch"
-            >
-              <input
-                class="custom-control-input"
-                id="toggle-B2"
-                type="checkbox"
-              />
-              <label
-                class="custom-control-label"
-                for="toggle-B2"
-              >
-                No
-              </label>
-            </div>
-          </td>
-          <td>
-            <button
-              class="btn btn-sm btn-danger"
-              type="button"
-            >
-               
-               
-              <i
-                class="fa fa-trash-alt mr-2 devices-table-delete-icon"
-              />
-              Delete
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 `;
