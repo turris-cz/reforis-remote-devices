@@ -2,12 +2,12 @@
     "name": "reforis_remote_devices",
     "author": "CZ.NIC, z.s.p.o.",
     "repository": {
-      "type": "git",
-      "url": "https://gitlab.nic.cz/turris/reforis/reforis-remote-devices.git"
+        "type": "git",
+        "url": "https://gitlab.nic.cz/turris/reforis/reforis-remote-devices.git"
     },
     "license": "GPL-3.0",
     "version": "1.3.0",
-    "description": "reForis Remote Devices Plugin",
+    "description": "reForis Remote Devices Plugin.",
     "main": "./src/app.js",
     "dependencies": {
         "foris": "^5.1.11"
