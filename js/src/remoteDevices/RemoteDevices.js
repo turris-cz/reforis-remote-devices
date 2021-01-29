@@ -30,7 +30,6 @@ export default function RemoteDevices({ ws }) {
                 )}
             </p>
             <AddDeviceForm />
-            <h2>{_("Devices")}</h2>
             <Devices ws={ws} />
         </>
     );

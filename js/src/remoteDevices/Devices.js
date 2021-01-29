@@ -7,7 +7,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { API_STATE, Spinner, ErrorMessage } from "foris";
+import { API_STATE, Spinner, ErrorMessage, formFieldsSize } from "foris";
 
 import DevicesTable from "./DevicesTable";
 import {
@@ -45,11 +45,14 @@ export default function Devices({ ws }) {
         return <ErrorMessage />;
     }
     return (
-        <DevicesTable
-            ws={ws}
-            devices={devices}
-            patchDevice={patchDevice}
-            deleteDevice={deleteDevice}
-        />
+        <div className={formFieldsSize}>
+            <h2>{_("Devices")}</h2>
+            <DevicesTable
+                ws={ws}
+                devices={devices}
+                patchDevice={patchDevice}
+                deleteDevice={deleteDevice}
+            />
+        </div>
     );
 }
