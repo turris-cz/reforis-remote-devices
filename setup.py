@@ -32,7 +32,7 @@ class RemoteDevicesBuild(build_py):
 
 setuptools.setup(
     name=NAME,
-    version='1.3.0',
+    version='1.3.1',
     packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
 
@@ -51,8 +51,8 @@ setuptools.setup(
             'pylint==2.3.1',
             'pylint-quotes==0.2.1',
             'pycodestyle==2.5.0',
-            'reforis @ git+https://gitlab.labs.nic.cz/turris/reforis/reforis@master#egg=reforis',
-            'foris-client @ git+https://gitlab.labs.nic.cz/turris/foris-controller/foris-client@master#egg=foris-client',
+            'reforis @ git+https://gitlab.nic.cz/turris/reforis/reforis@master#egg=reforis',
+            'foris-client @ git+https://gitlab.nic.cz/turris/foris-controller/foris-client@master#egg=foris-client',
             'paho-mqtt==1.5.0',
         ],
     },
@@ -60,7 +60,7 @@ setuptools.setup(
         'reforis_distutils',
     ],
     dependency_links=[
-        'git+https://gitlab.labs.nic.cz/turris/reforis/reforis-distutils.git#egg=reforis-distutils',
+        'git+https://gitlab.nic.cz/turris/reforis/reforis-distutils.git#egg=reforis-distutils',
     ],
     entry_points={
         'foris.plugins': f'{NAME} = {NAME}:remote_devices'
