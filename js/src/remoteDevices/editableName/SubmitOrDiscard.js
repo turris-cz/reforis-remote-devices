@@ -26,10 +26,18 @@ export default function SubmitOrDiscard({ editorEnabled, onDiscard }) {
 
     return (
         <div className="submit-or-discard">
-            <Button type="submit" className={`${buttonClass} mr-2`} title="Save changes">
+            <Button
+                type="submit"
+                className={`${buttonClass} mr-2`}
+                title="Save changes"
+            >
                 <i className="fa fa-check fa-fw text-success" />
             </Button>
-            <Button className={buttonClass} onClick={onDiscard} title="Discard changes">
+            <Button
+                className={buttonClass}
+                onClick={onDiscard}
+                title="Discard changes"
+            >
                 <i className="fa fa-times fa-fw text-danger" />
             </Button>
         </div>

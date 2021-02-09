@@ -10,25 +10,25 @@ import mockAxios from "jest-mock-axios";
 import { mockSetAlert } from "foris/testUtils/alertContextMock";
 import { mockJSONError } from "foris/testUtils/network";
 import {
-    render, fireEvent, getByLabelText, getByText, wait,
+    render,
+    fireEvent,
+    getByLabelText,
+    getByText,
+    wait,
 } from "foris/testUtils/customTestRender";
 
 import AddDeviceForm from "../AddDeviceForm";
 
 function getFormElements(container) {
     return {
-        fileInput: getByLabelText(container, "Token file"),
+        fileInput: getByLabelText(container, "Choose token file"),
         submitButton: getByText(container, "Upload token"),
     };
 }
 
 function setFilesProperty(input, files) {
     // Files can't be set by fireEvent, see https://github.com/testing-library/react-testing-library/issues/93
-    Object.defineProperty(
-        input,
-        "files",
-        { value: files, configurable: true },
-    );
+    Object.defineProperty(input, "files", { value: files, configurable: true });
 }
 
 describe("<AddDeviceForm />", () => {
@@ -56,7 +56,7 @@ describe("<AddDeviceForm />", () => {
         expect(mockAxios.post).toBeCalledWith(
             "/reforis/remote-devices/api/devices",
             expect.anything(), // Can't compare two FormData objects
-            expect.anything(),
+            expect.anything()
         );
     });
 
@@ -64,19 +64,36 @@ describe("<AddDeviceForm />", () => {
         // Wrong length of file name
         setFilesProperty(fileInput, [new File([], "q".repeat(51))]);
         fireEvent.change(fileInput);
-        expect(getByText(container, "Filename must be at least 1 and at most 50 characters long.")).toBeDefined();
+        expect(
+            getByText(
+                container,
+                "The filename must be at least 1 and at most 50 characters long."
+            )
+        ).toBeDefined();
         expect(submitButton.disabled).toBe(true);
 
         // Invalid characters
         setFilesProperty(fileInput, [new File([], "!@#!$@%.tar.gz")]);
         fireEvent.change(fileInput);
-        expect(getByText(container, "Filename can contain only alphanumeric characters, dots, dashes and underscores.")).toBeDefined();
+        expect(
+            getByText(
+                container,
+                "The filename can contain only alphanumeric characters, dots, dashes, and underscores."
+            )
+        ).toBeDefined();
         expect(submitButton.disabled).toBe(true);
 
         // File too big
-        setFilesProperty(fileInput, [new File(["q".repeat(1024 * 1025)], "turris.tar.gz")]);
+        setFilesProperty(fileInput, [
+            new File(["q".repeat(1024 * 1025)], "turris.tar.gz"),
+        ]);
         fireEvent.change(fileInput);
-        expect(getByText(container, "File is too big. Maximum size is 1 MB.")).toBeDefined();
+        expect(
+            getByText(
+                container,
+                "The file is too big. The maximum size is 1 MB."
+            )
+        ).toBeDefined();
         expect(submitButton.disabled).toBe(true);
     });
 

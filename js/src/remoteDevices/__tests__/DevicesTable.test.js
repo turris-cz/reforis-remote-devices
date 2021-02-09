@@ -26,7 +26,7 @@ describe("<DevicesTable />", () => {
                 isDeleting={isDeleting}
                 deleteDevice={deleteDevice}
                 patchDevice={patchDevice}
-            />,
+            />
         );
     }
 
@@ -44,12 +44,16 @@ describe("<DevicesTable />", () => {
         const { getAllByText } = renderTable(devicesFixture);
         const deleteButtons = getAllByText("Delete");
         fireEvent.click(deleteButtons[0]);
-        expect(deleteDevice).toBeCalledWith({ suffix: devicesFixture[0].controller_id });
+        expect(deleteDevice).toBeCalledWith({
+            suffix: devicesFixture[0].controller_id,
+        });
     });
 
     it("should execute patchDevice callback when name is changed", () => {
         const device = devicesFixture[0];
-        const { getByDisplayValue, getByTitle, queryByTitle } = renderTable([device]);
+        const { getByDisplayValue, getByTitle, queryByTitle } = renderTable([
+            device,
+        ]);
         const nameInput = getByDisplayValue(device.options.custom_name);
         const newName = "First device name";
 
@@ -63,7 +67,10 @@ describe("<DevicesTable />", () => {
         fireEvent.change(nameInput, { target: { value: newName } });
 
         fireEvent.click(getByTitle("Save changes"));
-        expect(patchDevice).toBeCalledWith({ data: { options: { custom_name: newName } }, suffix: device.controller_id });
+        expect(patchDevice).toBeCalledWith({
+            data: { options: { custom_name: newName } },
+            suffix: device.controller_id,
+        });
         expect(nameInput.readOnly).toBe(true);
     });
 
@@ -87,40 +94,58 @@ describe("<DevicesTable />", () => {
         const { getAllByText } = renderTable(devicesFixture);
         const toggleButtons = getAllByText("Yes");
         fireEvent.click(toggleButtons[0]);
-        expect(patchDevice).toBeCalledWith({ data: { "enabled": false }, suffix: devicesFixture[0].controller_id });
+        expect(patchDevice).toBeCalledWith({
+            data: { enabled: false },
+            suffix: devicesFixture[0].controller_id,
+        });
     });
 
     it("should execute patchDevice callback when toggle is pressed (enable) ", () => {
         const { getAllByText } = renderTable(devicesFixture);
         const toggleButtons = getAllByText("No");
         fireEvent.click(toggleButtons[0]);
-        expect(patchDevice).toBeCalledWith({ data: { "enabled": true }, suffix: devicesFixture[1].controller_id });
+        expect(patchDevice).toBeCalledWith({
+            data: { enabled: true },
+            suffix: devicesFixture[1].controller_id,
+        });
     });
 
     it("should display started status", () => {
         const device = devicesFixture[0];
         const { getByTitle } = renderTable([device]);
-        act(() => webSockets.dispatch(
-            { module: "remote", action: "advertize", data: { id: device.controller_id, state: "started" } },
-        ));
+        act(() =>
+            webSockets.dispatch({
+                module: "remote",
+                action: "advertize",
+                data: { id: device.controller_id, state: "started" },
+            })
+        );
         expect(getByTitle("Started")).toBeDefined();
     });
 
     it("should display running status", () => {
         const device = devicesFixture[0];
         const { getByTitle } = renderTable([device]);
-        act(() => webSockets.dispatch(
-            { module: "remote", action: "advertize", data: { id: device.controller_id, state: "running" } },
-        ));
+        act(() =>
+            webSockets.dispatch({
+                module: "remote",
+                action: "advertize",
+                data: { id: device.controller_id, state: "running" },
+            })
+        );
         expect(getByTitle("Running")).toBeDefined();
     });
 
     it("should display exited status", () => {
         const device = devicesFixture[0];
         const { getByTitle } = renderTable([device]);
-        act(() => webSockets.dispatch(
-            { module: "remote", action: "advertize", data: { id: device.controller_id, state: "exitted" } },
-        ));
+        act(() =>
+            webSockets.dispatch({
+                module: "remote",
+                action: "advertize",
+                data: { id: device.controller_id, state: "exitted" },
+            })
+        );
         expect(getByTitle("Exited")).toBeDefined();
     });
 });

@@ -57,21 +57,38 @@ export default function EditableName({ name, patchDevice }) {
     }
 
     return (
-        <form onSubmit={saveChanges} className="editable-name-form" ref={formRef}>
+        <form
+            onSubmit={saveChanges}
+            className="editable-name-form"
+            ref={formRef}
+        >
             <div className="editable-name-input-wrapper">
                 <input
                     type="text"
                     value={formData.name}
                     maxLength="30"
                     placeholder="Custom name"
-                    className={editorEnabled ? "form-control" : "editable-name-input-disabled"}
+                    className={
+                        editorEnabled
+                            ? "form-control"
+                            : "editable-name-input-disabled"
+                    }
                     readOnly={!editorEnabled}
-                    onChange={formChangeHandler((value) => ({ name: { $set: value } }))}
+                    onChange={formChangeHandler((value) => ({
+                        name: { $set: value },
+                    }))}
                     ref={inputRef}
                 />
-                <SubmitOrDiscard editorEnabled={editorEnabled} onDiscard={discardChanges} />
+                <SubmitOrDiscard
+                    editorEnabled={editorEnabled}
+                    onDiscard={discardChanges}
+                />
             </div>
-            <Button className="btn-link" onClick={toggleEdit} title={_("Edit name")}>
+            <Button
+                className="btn-link"
+                onClick={toggleEdit}
+                title={_("Edit name")}
+            >
                 <i className="fa fa-edit text-muted" />
             </Button>
         </form>

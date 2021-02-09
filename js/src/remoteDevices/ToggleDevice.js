@@ -26,7 +26,9 @@ export default function ToggleDevice({ controllerID, enabled, patchDevice }) {
                 checked={enabled}
                 onChange={() => patchDevice({ enabled: !enabled })}
             />
-            <label className="custom-control-label" htmlFor={id}>{enabled ? _("Yes") : _("No")}</label>
+            <label className="custom-control-label" htmlFor={id}>
+                {enabled ? _("Yes") : _("No")}
+            </label>
         </div>
     );
 }

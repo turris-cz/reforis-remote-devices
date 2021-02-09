@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -7,11 +7,15 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { API_STATE, Spinner, ErrorMessage } from "foris";
+import { API_STATE, Spinner, ErrorMessage, formFieldsSize } from "foris";
 
 import DevicesTable from "./DevicesTable";
 import {
-    useGetDevices, useUpdateDevicesOnAdd, usePatchDevice, useUpdateDevicesOnEdit, useDeleteDevice,
+    useGetDevices,
+    useUpdateDevicesOnAdd,
+    usePatchDevice,
+    useUpdateDevicesOnEdit,
+    useDeleteDevice,
     useUpdateDevicesOnDelete,
 } from "./hooks";
 
@@ -31,19 +35,24 @@ export default function Devices({ ws }) {
     const [deleteState, deleteDevice] = useDeleteDevice();
     useUpdateDevicesOnDelete(ws, setDevices);
 
-    if (getState === API_STATE.INIT
-        || [getState, patchState, deleteState].includes(API_STATE.SENDING)) {
+    if (
+        getState === API_STATE.INIT ||
+        [getState, patchState, deleteState].includes(API_STATE.SENDING)
+    ) {
         return <Spinner />;
     }
     if (getState === API_STATE.ERROR) {
         return <ErrorMessage />;
     }
     return (
-        <DevicesTable
-            ws={ws}
-            devices={devices}
-            patchDevice={patchDevice}
-            deleteDevice={deleteDevice}
-        />
+        <div className={formFieldsSize}>
+            <h2>{_("Devices List")}</h2>
+            <DevicesTable
+                ws={ws}
+                devices={devices}
+                patchDevice={patchDevice}
+                deleteDevice={deleteDevice}
+            />
+        </div>
     );
 }
