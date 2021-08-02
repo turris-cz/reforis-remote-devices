@@ -64,7 +64,7 @@ export default function AddDeviceForm() {
                     label={
                         formData.token
                             ? formData.token.name
-                            : _("Choose token file")
+                            : _("Choose token file...")
                     }
                     files={[formData.token]}
                     error={formErrors.token}
