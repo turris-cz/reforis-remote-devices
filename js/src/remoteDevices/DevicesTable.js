@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (https://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -125,7 +125,7 @@ function DeviceRow({ ws, device, deleteDevice, patchDevice }) {
                     patchDevice={patchDevice}
                 />
             </td>
-            <td>
+            <td className="text-right">
                 <Button className="btn-sm btn-danger" onClick={deleteDevice}>
                     <i className="fa fa-trash-alt mr-2 devices-table-delete-icon" />
                     {_("Delete")}
