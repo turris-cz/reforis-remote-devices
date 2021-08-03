@@ -83,10 +83,12 @@ lint-web: venv
 test: test-js test-web
 test-js:
 	cd $(JS_DIR); npm test
-test-web: venv
-	$(VENV_BIN)/$(PYTHON) -m pytest -vv tests
+test-js-watch:
+	cd $(JS_DIR); npm test -- --watch
 test-js-update-snapshots:
 	cd $(JS_DIR); npm test -- -u
+test-web: venv
+	$(VENV_BIN)/$(PYTHON) -m pytest -vv tests
 
 create-messages:
 	$(VENV_BIN)/pybabel extract -F babel.cfg -o ./reforis_remote_devices/translations/messages.pot .
