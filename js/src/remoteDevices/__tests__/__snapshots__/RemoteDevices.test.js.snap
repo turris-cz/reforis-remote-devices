@@ -30,7 +30,7 @@ exports[`<RemoteDevices /> should render component 1`] = `
           class="custom-file-label"
           for="1"
         >
-          Choose token file
+          Choose token file...
         </label>
         <div
           class="input-group custom-file"
