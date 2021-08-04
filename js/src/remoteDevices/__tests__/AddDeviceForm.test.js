@@ -21,7 +21,7 @@ import AddDeviceForm from "../AddDeviceForm";
 
 function getFormElements(container) {
     return {
-        fileInput: getByLabelText(container, "Choose token file"),
+        fileInput: getByLabelText(container, "Choose token file..."),
         submitButton: getByText(container, "Upload token"),
     };
 }

@@ -75,7 +75,7 @@ exports[`<DevicesTable /> should render devices table 1`] = `
                 />
               </div>
               <button
-                class="btn btn-link"
+                class="btn btn-link mb-0"
                 title="Edit name"
                 type="button"
               >
@@ -115,7 +115,9 @@ exports[`<DevicesTable /> should render devices table 1`] = `
               </label>
             </div>
           </td>
-          <td>
+          <td
+            class="text-right"
+          >
             <button
               class="btn btn-sm btn-danger"
               type="button"
@@ -150,7 +152,7 @@ exports[`<DevicesTable /> should render devices table 1`] = `
                 />
               </div>
               <button
-                class="btn btn-link"
+                class="btn btn-link mb-0"
                 title="Edit name"
                 type="button"
               >
@@ -189,7 +191,9 @@ exports[`<DevicesTable /> should render devices table 1`] = `
               </label>
             </div>
           </td>
-          <td>
+          <td
+            class="text-right"
+          >
             <button
               class="btn btn-sm btn-danger"
               type="button"
@@ -224,7 +228,7 @@ exports[`<DevicesTable /> should render devices table 1`] = `
                 />
               </div>
               <button
-                class="btn btn-link"
+                class="btn btn-link mb-0"
                 title="Edit name"
                 type="button"
               >
@@ -264,7 +268,9 @@ exports[`<DevicesTable /> should render devices table 1`] = `
               </label>
             </div>
           </td>
-          <td>
+          <td
+            class="text-right"
+          >
             <button
               class="btn btn-sm btn-danger"
               type="button"
@@ -299,7 +305,7 @@ exports[`<DevicesTable /> should render devices table 1`] = `
                 />
               </div>
               <button
-                class="btn btn-link"
+                class="btn btn-link mb-0"
                 title="Edit name"
                 type="button"
               >
@@ -338,7 +344,9 @@ exports[`<DevicesTable /> should render devices table 1`] = `
               </label>
             </div>
           </td>
-          <td>
+          <td
+            class="text-right"
+          >
             <button
               class="btn btn-sm btn-danger"
               type="button"

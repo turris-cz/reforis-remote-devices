@@ -6,11 +6,11 @@
         "url": "https://gitlab.nic.cz/turris/reforis/reforis-remote-devices.git"
     },
     "license": "GPL-3.0",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "description": "reForis Remote Devices Plugin.",
     "main": "./src/app.js",
     "dependencies": {
-        "foris": "^5.1.11"
+        "foris": "^5.1.14"
     },
     "peerDependencies": {
         "prop-types": "15.7.2",
