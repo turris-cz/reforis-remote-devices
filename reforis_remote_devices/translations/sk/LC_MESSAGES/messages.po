@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-08-03 12:07+0300\n"
-"PO-Revision-Date: 2021-08-12 22:35+0000\n"
+"PO-Revision-Date: 2021-09-23 06:39+0000\n"
 "Last-Translator: Atec <dr.atec@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/turris/"
 "reforis-remote-devices-plugin/sk/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.8-dev\n"
+"X-Generator: Weblate 4.9-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/app.js:11
@@ -56,7 +56,7 @@ msgid ""
 "underscores."
 msgstr ""
 "Názov súboru môže obsahovať len písmená, číslice, bodky, pomlčky a "
-"podčiaknutia."
+"podčiarkovník."
 
 #: js/src/remoteDevices/Devices.js:49
 msgid "Devices List"
@@ -149,7 +149,7 @@ msgstr "Zariadenie sa nedá vymazať."
 
 #: reforis_remote_devices/__init__.py:79
 msgid "Missing data for \"options\" or \"enabled\" field."
-msgstr "Chýbajúce dáta pre polia „voľby“ alebo “povolené“."
+msgstr "Chýbajúce dáta pre polia „voľby“ alebo „povolené“."
 
 #: reforis_remote_devices/__init__.py:86
 msgid "Name is too long. Maximum 30 characters are allowed."
