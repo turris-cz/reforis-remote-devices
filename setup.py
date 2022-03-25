@@ -1,4 +1,4 @@
-#  Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2019-2022 CZ.NIC z.s.p.o. (https://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
@@ -36,9 +36,10 @@ setuptools.setup(
     packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
 
-    description='',
-    author='CZ.NIC, z.s.p.o.',
-    author_email='bogdan.bodnar@nic.cz',
+    description='reForis Remote Devices plugin allows detecting new devices on a local network.',
+    url='https://gitlab.nic.cz/turris/reforis/reforis-remote-devices',
+    author='CZ.NIC, z.s.p.o. (https://www.nic.cz/)',
+    author_email='software@turris.com',
 
     install_requires=[
         'flask',
