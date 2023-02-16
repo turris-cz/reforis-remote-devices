@@ -1,14 +1,14 @@
 /*
- * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (https://www.nic.cz/)
+ * Copyright (C) 2019-2023 CZ.NIC z.s.p.o. (https://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
  */
 
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 
 import { Button, useWSForisModule } from "foris";
+import PropTypes from "prop-types";
 
 import EditableName from "./editableName/EditableName";
 import ToggleDevice from "./ToggleDevice";
@@ -18,6 +18,9 @@ import "./DevicesTable.css";
 const deviceShape = PropTypes.shape({
     controller_id: PropTypes.string.isRequired,
     enabled: PropTypes.bool.isRequired,
+    options: PropTypes.shape({
+        custom_name: PropTypes.string,
+    }),
 });
 
 DevicesTable.propTypes = {

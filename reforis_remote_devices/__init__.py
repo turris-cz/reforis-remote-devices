@@ -1,11 +1,12 @@
-#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2019-2024 CZ.NIC z.s.p.o. (https://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
+""" reForis Remote Devices plugin """
+
 from pathlib import Path
 from http import HTTPStatus
-from os.path import splitext
 import base64
 
 from flask import Blueprint, current_app, jsonify, request
@@ -13,7 +14,6 @@ from flask_babel import gettext as _
 
 from reforis.foris_controller_api.utils import validate_json, APIError
 
-# pylint: disable=invalid-name
 blueprint = Blueprint(
     'RemoteDevices',
     __name__,
@@ -22,7 +22,6 @@ blueprint = Blueprint(
 
 BASE_DIR = Path(__file__).parent
 
-# pylint: disable=invalid-name
 remote_devices = {
     'blueprint': blueprint,
     # Define {python_module_name}/js/app.min.js
@@ -34,11 +33,13 @@ remote_devices = {
 
 @blueprint.route('/devices', methods=['GET'])
 def get_devices():
+    """ Get list of devices """
     return jsonify(current_app.backend.perform('subordinates', 'list')['subordinates'])
 
 
 @blueprint.route('/devices', methods=['POST'])
 def post_devices():
+    """ Add new device """
     if 'token' not in request.files:
         raise APIError(_('Missing data for \'token\' file.'), HTTPStatus.BAD_REQUEST)
     token_file = request.files['token']
@@ -59,6 +60,7 @@ def post_devices():
 
 @blueprint.route('/devices/<controller_id>', methods=['DELETE'])
 def delete_client(controller_id):
+    """ Delete device """
     response = current_app.backend.perform('subordinates', 'del', {'controller_id': controller_id})
     if response.get('result') is not True:
         raise APIError(_('Cannot delete device.'), HTTPStatus.INTERNAL_SERVER_ERROR)
