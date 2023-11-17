@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-08-03 12:07+0300\n"
-"PO-Revision-Date: 2023-04-11 14:48+0000\n"
-"Last-Translator: Arusekk <arek_koz@o2.pl>\n"
+"PO-Revision-Date: 2023-11-19 00:04+0000\n"
+"Last-Translator: Eryk Michalak <gnu.ewm@protonmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/turris/"
 "reforis-remote-devices-plugin/pl/>\n"
 "Language: pl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.17-dev\n"
+"X-Generator: Weblate 5.2\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/app.js:11
@@ -57,7 +57,7 @@ msgstr ""
 
 #: js/src/remoteDevices/Devices.js:49
 msgid "Devices List"
-msgstr ""
+msgstr "Lista urządzeń"
 
 #: js/src/remoteDevices/DevicesTable.js:34
 msgid "No devices added yet."
