@@ -88,13 +88,15 @@ exports[`<Devices /> should render table 1`] = `
                   />
                 </div>
                 <button
-                  class="btn btn-link mb-0"
+                  class="btn btn-link mb-0 d-inline-flex justify-content-center align-items-center"
                   title="Edit name"
                   type="button"
                 >
-                  <i
-                    class="fa fa-edit text-muted"
-                  />
+                  <span>
+                    <i
+                      class="fa fa-edit text-muted"
+                    />
+                  </span>
                 </button>
               </form>
             </td>
@@ -132,13 +134,15 @@ exports[`<Devices /> should render table 1`] = `
               class="text-right"
             >
               <button
-                class="btn btn-sm btn-danger"
+                class="btn btn-sm btn-danger d-inline-flex justify-content-center align-items-center"
                 type="button"
               >
-                <i
-                  class="fa fa-trash-alt mr-2 devices-table-delete-icon"
-                />
-                Delete
+                <span>
+                  <i
+                    class="fa fa-trash-alt mr-2 devices-table-delete-icon"
+                  />
+                  Delete
+                </span>
               </button>
             </td>
           </tr>
@@ -165,13 +169,15 @@ exports[`<Devices /> should render table 1`] = `
                   />
                 </div>
                 <button
-                  class="btn btn-link mb-0"
+                  class="btn btn-link mb-0 d-inline-flex justify-content-center align-items-center"
                   title="Edit name"
                   type="button"
                 >
-                  <i
-                    class="fa fa-edit text-muted"
-                  />
+                  <span>
+                    <i
+                      class="fa fa-edit text-muted"
+                    />
+                  </span>
                 </button>
               </form>
             </td>
@@ -208,13 +214,15 @@ exports[`<Devices /> should render table 1`] = `
               class="text-right"
             >
               <button
-                class="btn btn-sm btn-danger"
+                class="btn btn-sm btn-danger d-inline-flex justify-content-center align-items-center"
                 type="button"
               >
-                <i
-                  class="fa fa-trash-alt mr-2 devices-table-delete-icon"
-                />
-                Delete
+                <span>
+                  <i
+                    class="fa fa-trash-alt mr-2 devices-table-delete-icon"
+                  />
+                  Delete
+                </span>
               </button>
             </td>
           </tr>
@@ -241,13 +249,15 @@ exports[`<Devices /> should render table 1`] = `
                   />
                 </div>
                 <button
-                  class="btn btn-link mb-0"
+                  class="btn btn-link mb-0 d-inline-flex justify-content-center align-items-center"
                   title="Edit name"
                   type="button"
                 >
-                  <i
-                    class="fa fa-edit text-muted"
-                  />
+                  <span>
+                    <i
+                      class="fa fa-edit text-muted"
+                    />
+                  </span>
                 </button>
               </form>
             </td>
@@ -285,13 +295,15 @@ exports[`<Devices /> should render table 1`] = `
               class="text-right"
             >
               <button
-                class="btn btn-sm btn-danger"
+                class="btn btn-sm btn-danger d-inline-flex justify-content-center align-items-center"
                 type="button"
               >
-                <i
-                  class="fa fa-trash-alt mr-2 devices-table-delete-icon"
-                />
-                Delete
+                <span>
+                  <i
+                    class="fa fa-trash-alt mr-2 devices-table-delete-icon"
+                  />
+                  Delete
+                </span>
               </button>
             </td>
           </tr>
@@ -318,13 +330,15 @@ exports[`<Devices /> should render table 1`] = `
                   />
                 </div>
                 <button
-                  class="btn btn-link mb-0"
+                  class="btn btn-link mb-0 d-inline-flex justify-content-center align-items-center"
                   title="Edit name"
                   type="button"
                 >
-                  <i
-                    class="fa fa-edit text-muted"
-                  />
+                  <span>
+                    <i
+                      class="fa fa-edit text-muted"
+                    />
+                  </span>
                 </button>
               </form>
             </td>
@@ -361,13 +375,15 @@ exports[`<Devices /> should render table 1`] = `
               class="text-right"
             >
               <button
-                class="btn btn-sm btn-danger"
+                class="btn btn-sm btn-danger d-inline-flex justify-content-center align-items-center"
                 type="button"
               >
-                <i
-                  class="fa fa-trash-alt mr-2 devices-table-delete-icon"
-                />
-                Delete
+                <span>
+                  <i
+                    class="fa fa-trash-alt mr-2 devices-table-delete-icon"
+                  />
+                  Delete
+                </span>
               </button>
             </td>
           </tr>

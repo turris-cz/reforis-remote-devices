@@ -104,7 +104,7 @@ def test_patch_device_partially(client, request_data):
 
 
 def test_patch_device_invalid_json(client):
-    response = client.patch(DEVICE_URL)
+    response = client.patch(DEVICE_URL, json={})
     assert response.status_code == HTTPStatus.BAD_REQUEST
     assert response.json == 'Invalid JSON'
 

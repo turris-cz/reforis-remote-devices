@@ -39,11 +39,14 @@ exports[`<AddDeviceForm /> should render form 1`] = `
         class="text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+          class="btn btn-primary col-sm-12 col-md-3 col-lg-2 d-inline-flex justify-content-center align-items-center"
+          data-testid="upload-token-button"
           disabled=""
           type="submit"
         >
-          Upload token
+          <span>
+            Upload token
+          </span>
         </button>
       </div>
     </form>

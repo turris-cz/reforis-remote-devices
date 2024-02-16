@@ -1,9 +1,13 @@
-#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2019-2024 CZ.NIC z.s.p.o. (https://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-.PHONY: all venv prepare-dev install install-js install-local-reforis watch-js build-js lint lint-js lint-js-fix lint-web test test-js test-web test-js-update-snapshots create-messages init-langs update-messages compile-messages clean
+PROJECT="reForis Remote Devices Plugin"
+# Retrieve version from setup.py 
+VERSION= $(shell sed -En "s/.*version=['\"](.+)['\"].*/\1/p" setup.py)
+COPYRIGHT_HOLDER="CZ.NIC, z.s.p.o. (https://www.nic.cz/)"
+MSGID_BUGS_ADDRESS="tech.support@turris.cz"
 
 VENV_NAME?=venv
 VENV_BIN=$(shell pwd)/$(VENV_NAME)/bin
@@ -12,11 +16,10 @@ PYTHON=python3
 
 JS_DIR=./js
 
-LANGS = cs da de el en fi fo fr hr hu it ja ko lt nb nb_NO nl pl ro ru sk sv
+LANGS = cs da de el en fi fo fr hr hu it ja ko lt nb_NO nl pl ro ru sk sv
 
+.PHONY: all
 all:
-	@echo "make prepare-env"
-	@echo "    Install tools for development environment: node, npm, Python, virtualenv"
 	@echo "make prepare-dev"
 	@echo "    Create python virtual environment and install dependencies."
 	@echo "make install"
@@ -38,74 +41,119 @@ all:
 	@echo "make clean"
 	@echo "    Remove python artifacts and virtualenv."
 
+
+# Preparation
+
+.PHONY: prepare-dev
+prepare-dev:
+	which npm || curl -sL https://deb.nodesource.com/setup_21.x | sudo -E bash -
+	which npm || sudo apt-get install -y nodejs
+	cd $(JS_DIR); npm install
+
+	which $(PYTHON) || sudo apt-get install -y $(PYTHON) $(PYTHON)-pip
+	which virtualenv || sudo $(PYTHON) -m pip install virtualenv
+	make venv
+
+.PHONY: venv
 venv: $(VENV_NAME)/bin/activate
 $(VENV_NAME)/bin/activate: setup.py
 	test -d $(VENV_NAME) || $(PYTHON) -m virtualenv -p $(PYTHON) $(VENV_NAME)
-	# Some problem in latest version of setuptools during extracting translations.
-	$(VENV_BIN)/$(PYTHON) -m pip install -U pip setuptools==39.1.0
+	# upgrade pip to latest releases
+	$(VENV_BIN)/$(PYTHON) -m pip install --upgrade pip
 	$(VENV_BIN)/$(PYTHON) -m pip install -e .[devel]
 	touch $(VENV_NAME)/bin/activate
 
-prepare-env:
-	which npm || curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-	which npm || sudo apt install -y nodejs
-	which $(PYTHON) || sudo apt install -y $(PYTHON) $(PYTHON)-pip
-	which virtualenv || sudo $(PYTHON) -m pip install virtualenv
-prepare-dev:
-	cd $(JS_DIR); npm install
-	make venv
 
+# Installation
+
+.PHONY: install
 install:
-	opkg update
-	opkg install foris-controller-subordinates-module
+	opkg update && opkg install foris-controller-subordinates-module
 	$(PYTHON) -m pip install -e .
 	ln -sf /tmp/reforis-remote-devices/reforis_static/reforis_remote_devices /tmp/reforis/reforis_static/
 	/etc/init.d/lighttpd restart
+
+.PHONY: install-js
 install-js: js/package.json
 	cd $(JS_DIR); npm install --save-dev
+
+.PHONY: install-local-reforis
 install-local-reforis:
 	$(VENV_BIN)/$(PYTHON) -m pip install -e ../reforis
 
-watch-js:
-	cd $(JS_DIR); npm run-script watch
+
+# JavaScript
+
+.PHONY: build-js	
 build-js:
 	cd $(JS_DIR); npm run-script build
 
+.PHONY: watch-js
+watch-js:
+	cd $(JS_DIR); npm run-script watch
+
+
+# Linting
+
+.PHONY: lint
 lint: lint-js lint-web
+
+.PHONY: lint-js
 lint-js:
 	cd $(JS_DIR); npm run lint
+
+.PHONY: lint-js-fix
 lint-js-fix:
 	cd $(JS_DIR); npm run lint:fix
+
+.PHONY: lint-web
 lint-web: venv
 	$(VENV_BIN)/$(PYTHON) -m pylint --rcfile=pylintrc reforis_remote_devices
 	$(VENV_BIN)/$(PYTHON) -m pycodestyle --config=pycodestyle reforis_remote_devices
 
+
+# Testing
+
+.PHONY: test
 test: test-js test-web
+
+.PHONY: test-js
 test-js:
 	cd $(JS_DIR); npm test
+
+.PHONY: test-js-watch
 test-js-watch:
 	cd $(JS_DIR); npm test -- --watch
+
+.PHONY: test-js-update-snapshots
 test-js-update-snapshots:
 	cd $(JS_DIR); npm test -- -u
+
+.PHONY: test-web
 test-web: venv
 	$(VENV_BIN)/$(PYTHON) -m pytest -vv tests
 
-create-messages:
-	$(VENV_BIN)/pybabel extract -F babel.cfg -o ./reforis_remote_devices/translations/messages.pot .
-init-langs: create-messages
-	for lang in $(LANGS); do \
-		$(VENV_BIN)/pybabel init \
-		-i reforis_remote_devices/translations/messages.pot \
-		-d reforis_remote_devices/translations/ -l $$lang \
-	; done
-update-messages:
-	$(VENV_BIN)/pybabel update -i ./reforis_remote_devices/translations/messages.pot -d ./reforis_remote_devices/translations
-compile-messages:
+
+# Translations
+
+.PHONY: create-messages
+create-messages: venv
+	$(VENV_BIN)/pybabel extract -F babel.cfg -o ./reforis_remote_devices/translations/messages.pot . --project=$(PROJECT) --version=$(VERSION) --copyright-holder=$(COPYRIGHT_HOLDER) --msgid-bugs-address=$(MSGID_BUGS_ADDRESS)
+
+.PHONY: update-messages
+update-messages: venv
+	$(VENV_BIN)/pybabel update -i ./reforis_remote_devices/translations/messages.pot -d ./reforis_remote_devices/translations --update-header-comment
+
+.PHONY: compile-messages
+compile-messages: venv
 	$(VENV_BIN)/pybabel compile -f -d ./reforis_remote_devices/translations
 
+
+# Other
+
+.PHONY: clean
 clean:
 	find . -name '*.pyc' -exec rm -f {} +
 	rm -rf $(VENV_NAME) *.eggs *.egg-info dist build .cache
-	rm -rf dist build *.egg-info
-	rm -rf $(JS_DIR)/node_modules/ reforis_static/remote_devices/js/app.min.js
+	rm -rf $(JS_DIR)/node_modules/ reforis_static/reforis_remote_devices/js/app.min.js
 	$(PYTHON) -m pip uninstall -y reforis_remote_devices
