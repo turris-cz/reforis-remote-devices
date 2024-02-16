@@ -68,6 +68,7 @@ $(VENV_NAME)/bin/activate: setup.py
 
 .PHONY: install
 install:
+	opkg update && opkg install foris-controller-subordinates-module
 	$(PYTHON) -m pip install -e .
 	ln -sf /tmp/reforis-remote-devices/reforis_static/reforis_remote_devices /tmp/reforis/reforis_static/
 	/etc/init.d/lighttpd restart
