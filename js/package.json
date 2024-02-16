@@ -7,13 +7,13 @@
     },
     "license": "GPL-3.0",
     "version": "1.4.1",
-    "description": "reForis Remote Devices Plugin.",
+    "description": "reForis Remote Devices plugin allows detecting new devices on a local network.",
     "main": "./src/app.js",
     "eslintConfig": {
         "extends": "eslint-config-reforis"
     },
     "dependencies": {
-        "foris": "^5.1.14"
+        "foris": "^5.6.1"
     },
     "peerDependencies": {
         "prop-types": "15.7.2",
@@ -22,27 +22,28 @@
         "react-router-dom": "^5.1.2"
     },
     "devDependencies": {
-        "@babel/cli": "^7.12.10",
-        "@babel/core": "^7.9.0",
-        "@babel/plugin-transform-runtime": "^7.9.0",
-        "@babel/preset-env": "^7.9.0",
-        "@babel/preset-react": "^7.9.4",
+        "@babel/cli": "^7.23.9",
+        "@babel/core": "^7.23.9",
+        "@babel/plugin-transform-runtime": "^7.23.9",
+        "@babel/preset-env": "^7.23.9",
+        "@babel/preset-react": "^7.23.3",
         "@testing-library/react": "^8.0.9",
         "babel-loader": "^8.1.0",
         "css-loader": "^3.4.2",
-        "eslint": "^8.34.0",
-        "eslint-config-reforis": "^2.0.2",
+        "eslint": "^8.56.0",
+        "eslint-config-reforis": "^2.1.0",
         "jest": "^25.2.1",
         "jest-mock-axios": "^3.2.0",
-        "moment-timezone": "^0.5.28",
+        "moment-timezone": "^0.5.45",
         "prettier": "^2.8.4",
-        "prop-types": "15.7.2",
+        "process": "^0.11.10",
+        "prop-types": "^15.8.1",
         "react": "16.9.0",
         "react-dom": "16.9.0",
         "react-router-dom": "^5.1.2",
         "style-loader": "^0.23.1",
-        "webpack": "^4.42.1",
-        "webpack-cli": "^3.3.11"
+        "webpack": "^5.90.2",
+        "webpack-cli": "^5.1.4"
     },
     "scripts": {
         "watch": "webpack --watch --mode=development",
