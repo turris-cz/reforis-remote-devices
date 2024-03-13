@@ -1,23 +1,24 @@
-# Hungarian translations for PROJECT.
-# Copyright (C) 2020 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# Hungarian translations for reForis Remote Devices Plugin.
+# Copyright (C) 2024 CZ.NIC, z.s.p.o. (https://www.nic.cz/)
+# This file is distributed under the same license as the reForis Remote
+# Devices Plugin project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-08-03 12:07+0300\n"
+"POT-Creation-Date: 2024-03-13 15:28+0100\n"
 "PO-Revision-Date: 2021-05-30 16:33+0000\n"
 "Last-Translator: Zoli <boritek@gmail.com>\n"
 "Language: hu\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/turris"
 "/reforis-remote-devices-plugin/hu/>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.14.0\n"
 
 #: js/src/app.js:11
 msgid "Remote Devices"
@@ -36,19 +37,19 @@ msgstr "Töltse fel a távvezérelni kívánt eszköz által létrehozott token 
 msgid "Choose token file..."
 msgstr "Válassza ki a token fájlt"
 
-#: js/src/remoteDevices/AddDeviceForm.js:85
+#: js/src/remoteDevices/AddDeviceForm.js:86
 msgid "Upload token"
 msgstr "Token feltöltése"
 
-#: js/src/remoteDevices/AddDeviceForm.js:100
+#: js/src/remoteDevices/AddDeviceForm.js:101
 msgid "The file is too big. The maximum size is 1 MB."
 msgstr "A fájl túl nagy. A maximális méret 1 MB."
 
-#: js/src/remoteDevices/AddDeviceForm.js:106
+#: js/src/remoteDevices/AddDeviceForm.js:107
 msgid "The filename must be at least 1 and at most 50 characters long."
 msgstr "A fájlnévnek legalább 1 és legfeljebb 50 karakter hosszúnak kell lennie."
 
-#: js/src/remoteDevices/AddDeviceForm.js:113
+#: js/src/remoteDevices/AddDeviceForm.js:114
 msgid ""
 "The filename can contain only alphanumeric characters, dots, dashes, and "
 "underscores."
@@ -56,62 +57,62 @@ msgstr ""
 "A fájlnév csak alfanumerikus karaktereket, pontokat, kötőjeleket és "
 "aláhúzásokat tartalmazhat."
 
-#: js/src/remoteDevices/Devices.js:49
+#: js/src/remoteDevices/Devices.js:50
 msgid "Devices List"
 msgstr "Eszközök listája"
 
-#: js/src/remoteDevices/DevicesTable.js:34
+#: js/src/remoteDevices/DevicesTable.js:37
 msgid "No devices added yet."
 msgstr "Még nincs hozzáadva eszköz."
 
-#: js/src/remoteDevices/DevicesTable.js:45
+#: js/src/remoteDevices/DevicesTable.js:48
 msgid "ID"
 msgstr "Azonosító"
 
-#: js/src/remoteDevices/DevicesTable.js:46
+#: js/src/remoteDevices/DevicesTable.js:49
 msgid "Name"
 msgstr "Név"
 
-#: js/src/remoteDevices/DevicesTable.js:48
+#: js/src/remoteDevices/DevicesTable.js:51
 msgid "Status"
 msgstr "Állapot"
 
-#: js/src/remoteDevices/DevicesTable.js:51
+#: js/src/remoteDevices/DevicesTable.js:54
 msgid "Managed"
 msgstr "Kezelt"
 
-#: js/src/remoteDevices/DevicesTable.js:56
-#: js/src/remoteDevices/DevicesTable.js:131
+#: js/src/remoteDevices/DevicesTable.js:59
+#: js/src/remoteDevices/DevicesTable.js:134
 msgid "Delete"
 msgstr "Törlés"
 
-#: js/src/remoteDevices/DevicesTable.js:144
+#: js/src/remoteDevices/DevicesTable.js:147
 msgid "Unknown status"
 msgstr "Ismeretlen állapot"
 
-#: js/src/remoteDevices/DevicesTable.js:147
+#: js/src/remoteDevices/DevicesTable.js:150
 msgid "Started"
 msgstr "Elindult"
 
-#: js/src/remoteDevices/DevicesTable.js:150
+#: js/src/remoteDevices/DevicesTable.js:153
 msgid "Running"
 msgstr "Fut"
 
-#: js/src/remoteDevices/DevicesTable.js:153
+#: js/src/remoteDevices/DevicesTable.js:156
 msgid "Exited"
 msgstr "Kilépett"
 
-#: js/src/remoteDevices/RemoteDevices.js:21
+#: js/src/remoteDevices/RemoteDevices.js:22
 msgid "Devices"
 msgstr "Eszközök"
 
-#: js/src/remoteDevices/RemoteDevices.js:23
+#: js/src/remoteDevices/RemoteDevices.js:24
 msgid "You can set up other Turris routers to be managed remotely by this device."
 msgstr ""
 "Beállíthat más Turris útválasztókat is, amelyeket ez az eszköz távolról "
 "kezel."
 
-#: js/src/remoteDevices/RemoteDevices.js:28
+#: js/src/remoteDevices/RemoteDevices.js:29
 msgid ""
 "To authorize your router, you will need a token file that can be obtained"
 " with the \"Remote Access\" plugin on the target device."
@@ -119,11 +120,11 @@ msgstr ""
 "Ahhoz, hogy engedélyezze az útválasztót szüksége lesz egy tokenre, amely "
 "a céleszköz \"Remote Access\" bővítményével szerezhető be."
 
-#: js/src/remoteDevices/ToggleDevice.js:30
+#: js/src/remoteDevices/ToggleDevice.js:31
 msgid "Yes"
 msgstr "Igen"
 
-#: js/src/remoteDevices/ToggleDevice.js:30
+#: js/src/remoteDevices/ToggleDevice.js:31
 msgid "No"
 msgstr "Nem"
 
@@ -131,29 +132,29 @@ msgstr "Nem"
 msgid "Edit name"
 msgstr "Név szerkesztése"
 
-#: reforis_remote_devices/__init__.py:43
+#: reforis_remote_devices/__init__.py:44
 msgid "Missing data for 'token' file."
 msgstr "Hiányoznak a \"token\" fájl adatai."
 
-#: reforis_remote_devices/__init__.py:53
+#: reforis_remote_devices/__init__.py:54
 msgid "Cannot add remote device token. Check if device is already added."
 msgstr ""
 "Nem lehet hozzáadni a távoli eszköz tokent. Ellenőrizze, hogy az eszköz "
 "már hozzá van-e adva."
 
-#: reforis_remote_devices/__init__.py:64
+#: reforis_remote_devices/__init__.py:66
 msgid "Cannot delete device."
 msgstr "Az eszköz nem törölhető."
 
-#: reforis_remote_devices/__init__.py:79
+#: reforis_remote_devices/__init__.py:81
 msgid "Missing data for \"options\" or \"enabled\" field."
 msgstr "Hiányoznak az \"opciók\" vagy az \"engedélyezve\" mező adatai."
 
-#: reforis_remote_devices/__init__.py:86
+#: reforis_remote_devices/__init__.py:87
 msgid "Name is too long. Maximum 30 characters are allowed."
 msgstr "A név túl hosszú. Legfeljebb 30 karakter megengedett."
 
-#: reforis_remote_devices/__init__.py:107
+#: reforis_remote_devices/__init__.py:106
 msgid "Cannot update device."
 msgstr "Az eszköz nem frissíthető."
 

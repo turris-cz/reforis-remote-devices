@@ -1,23 +1,24 @@
-# Dutch translations for PROJECT.
-# Copyright (C) 2020 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# Dutch translations for reForis Remote Devices Plugin.
+# Copyright (C) 2024 CZ.NIC, z.s.p.o. (https://www.nic.cz/)
+# This file is distributed under the same license as the reForis Remote
+# Devices Plugin project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-08-03 12:07+0300\n"
+"POT-Creation-Date: 2024-03-13 15:28+0100\n"
 "PO-Revision-Date: 2020-11-30 20:29+0000\n"
 "Last-Translator: Johan van de Wetering <mail@jvdwetering.nl>\n"
 "Language: nl\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/turris/reforis-"
 "remote-devices-plugin/nl/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.14.0\n"
 
 #: js/src/app.js:11
 msgid "Remote Devices"
@@ -39,21 +40,21 @@ msgstr ""
 msgid "Choose token file..."
 msgstr "Tokenbestand"
 
-#: js/src/remoteDevices/AddDeviceForm.js:85
+#: js/src/remoteDevices/AddDeviceForm.js:86
 msgid "Upload token"
 msgstr "Upload token"
 
-#: js/src/remoteDevices/AddDeviceForm.js:100
+#: js/src/remoteDevices/AddDeviceForm.js:101
 #, fuzzy
 msgid "The file is too big. The maximum size is 1 MB."
 msgstr "Bestand is te groot. Maximale grootte is 1 MB."
 
-#: js/src/remoteDevices/AddDeviceForm.js:106
+#: js/src/remoteDevices/AddDeviceForm.js:107
 #, fuzzy
 msgid "The filename must be at least 1 and at most 50 characters long."
 msgstr "Bestandsnaam moet minstens 1 en hoogstens 50 karakters lang zijn."
 
-#: js/src/remoteDevices/AddDeviceForm.js:113
+#: js/src/remoteDevices/AddDeviceForm.js:114
 #, fuzzy
 msgid ""
 "The filename can contain only alphanumeric characters, dots, dashes, and "
@@ -62,62 +63,62 @@ msgstr ""
 "Bestandsnaam kan alleen alfanummerieke karakters, punten, streepjes en "
 "underscores bevatten."
 
-#: js/src/remoteDevices/Devices.js:49
+#: js/src/remoteDevices/Devices.js:50
 msgid "Devices List"
 msgstr "Apparatenlijst"
 
-#: js/src/remoteDevices/DevicesTable.js:34
+#: js/src/remoteDevices/DevicesTable.js:37
 msgid "No devices added yet."
 msgstr "Nog geen apparaten toegevoegd."
 
-#: js/src/remoteDevices/DevicesTable.js:45
+#: js/src/remoteDevices/DevicesTable.js:48
 msgid "ID"
 msgstr "ID"
 
-#: js/src/remoteDevices/DevicesTable.js:46
+#: js/src/remoteDevices/DevicesTable.js:49
 msgid "Name"
 msgstr "Naam"
 
-#: js/src/remoteDevices/DevicesTable.js:48
+#: js/src/remoteDevices/DevicesTable.js:51
 msgid "Status"
 msgstr "Status"
 
-#: js/src/remoteDevices/DevicesTable.js:51
+#: js/src/remoteDevices/DevicesTable.js:54
 msgid "Managed"
 msgstr "Beheerd"
 
-#: js/src/remoteDevices/DevicesTable.js:56
-#: js/src/remoteDevices/DevicesTable.js:131
+#: js/src/remoteDevices/DevicesTable.js:59
+#: js/src/remoteDevices/DevicesTable.js:134
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: js/src/remoteDevices/DevicesTable.js:144
+#: js/src/remoteDevices/DevicesTable.js:147
 msgid "Unknown status"
 msgstr "Onbekende status"
 
-#: js/src/remoteDevices/DevicesTable.js:147
+#: js/src/remoteDevices/DevicesTable.js:150
 msgid "Started"
 msgstr "Gestart"
 
-#: js/src/remoteDevices/DevicesTable.js:150
+#: js/src/remoteDevices/DevicesTable.js:153
 msgid "Running"
 msgstr "Actief"
 
-#: js/src/remoteDevices/DevicesTable.js:153
+#: js/src/remoteDevices/DevicesTable.js:156
 msgid "Exited"
 msgstr "Gestopt"
 
-#: js/src/remoteDevices/RemoteDevices.js:21
+#: js/src/remoteDevices/RemoteDevices.js:22
 msgid "Devices"
 msgstr "Apparaten"
 
-#: js/src/remoteDevices/RemoteDevices.js:23
+#: js/src/remoteDevices/RemoteDevices.js:24
 msgid "You can set up other Turris routers to be managed remotely by this device."
 msgstr ""
 "U kunt andere Turris routers instellen om extern te beheren door dit "
 "apparaat."
 
-#: js/src/remoteDevices/RemoteDevices.js:28
+#: js/src/remoteDevices/RemoteDevices.js:29
 #, fuzzy
 msgid ""
 "To authorize your router, you will need a token file that can be obtained"
@@ -126,11 +127,11 @@ msgstr ""
 "Om uw router te autoriseren heeft u een token nodig welke u kunt "
 "verkrijgen via de \"Externe Toegang\" plugin op het te beheren apparaat."
 
-#: js/src/remoteDevices/ToggleDevice.js:30
+#: js/src/remoteDevices/ToggleDevice.js:31
 msgid "Yes"
 msgstr "Ja"
 
-#: js/src/remoteDevices/ToggleDevice.js:30
+#: js/src/remoteDevices/ToggleDevice.js:31
 msgid "No"
 msgstr "Nee"
 
@@ -138,29 +139,29 @@ msgstr "Nee"
 msgid "Edit name"
 msgstr "Naam wijzigen"
 
-#: reforis_remote_devices/__init__.py:43
+#: reforis_remote_devices/__init__.py:44
 msgid "Missing data for 'token' file."
 msgstr "Ontbrekende data voor tokenbestand."
 
-#: reforis_remote_devices/__init__.py:53
+#: reforis_remote_devices/__init__.py:54
 msgid "Cannot add remote device token. Check if device is already added."
 msgstr ""
 "Kan extern apparaat token niet toevoegen. Controleer of het apparaat "
 "reeds is toegevoegd."
 
-#: reforis_remote_devices/__init__.py:64
+#: reforis_remote_devices/__init__.py:66
 msgid "Cannot delete device."
 msgstr "Kan apparaat niet verwijderen."
 
-#: reforis_remote_devices/__init__.py:79
+#: reforis_remote_devices/__init__.py:81
 msgid "Missing data for \"options\" or \"enabled\" field."
 msgstr "Ontbrekende data voor \"opties\" of \"ingeschakeld\" veld."
 
-#: reforis_remote_devices/__init__.py:86
+#: reforis_remote_devices/__init__.py:87
 msgid "Name is too long. Maximum 30 characters are allowed."
 msgstr "Naam is te lang. Maximaal 30 karakters toegestaan."
 
-#: reforis_remote_devices/__init__.py:107
+#: reforis_remote_devices/__init__.py:106
 msgid "Cannot update device."
 msgstr "Kan apparaat niet updaten."
 
