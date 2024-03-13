@@ -109,8 +109,7 @@ lint-js-fix:
 
 .PHONY: lint-web
 lint-web: venv
-	$(VENV_BIN)/$(PYTHON) -m pylint --rcfile=pylintrc reforis_remote_devices
-	$(VENV_BIN)/$(PYTHON) -m pycodestyle --config=pycodestyle reforis_remote_devices
+	$(VENV_BIN)/$(PYTHON) -m ruff check reforis_remote_devices
 
 
 # Testing
