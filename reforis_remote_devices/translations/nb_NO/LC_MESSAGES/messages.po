@@ -1,24 +1,25 @@
-# Norwegian Bokmål translations for PROJECT.
-# Copyright (C) 2020 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# Norwegian Bokmål (Norway) translations for reForis Remote Devices Plugin.
+# Copyright (C) 2024 CZ.NIC, z.s.p.o. (https://www.nic.cz/)
+# This file is distributed under the same license as the reForis Remote
+# Devices Plugin project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-08-03 12:07+0300\n"
+"POT-Creation-Date: 2024-03-13 15:28+0100\n"
 "PO-Revision-Date: 2021-11-19 11:52+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
-"reforis-remote-devices-plugin/nb_NO/>\n"
 "Language: nb_NO\n"
+"Language-Team: Norwegian Bokmål "
+"<https://hosted.weblate.org/projects/turris/reforis-remote-devices-"
+"plugin/nb_NO/>\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9.1-dev\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.14.0\n"
 
 #: js/src/app.js:11
 msgid "Remote Devices"
@@ -40,21 +41,21 @@ msgstr ""
 msgid "Choose token file..."
 msgstr "Velg symbolfil …"
 
-#: js/src/remoteDevices/AddDeviceForm.js:85
+#: js/src/remoteDevices/AddDeviceForm.js:86
 msgid "Upload token"
 msgstr "Last opp symbol"
 
-#: js/src/remoteDevices/AddDeviceForm.js:100
+#: js/src/remoteDevices/AddDeviceForm.js:101
 #, fuzzy
 msgid "The file is too big. The maximum size is 1 MB."
 msgstr "Filen er for stor. Maksimal størrelse er 1 MB."
 
-#: js/src/remoteDevices/AddDeviceForm.js:106
+#: js/src/remoteDevices/AddDeviceForm.js:107
 #, fuzzy
 msgid "The filename must be at least 1 and at most 50 characters long."
 msgstr "Filnavnet må være minst 1 og høyst 50 tegn langt."
 
-#: js/src/remoteDevices/AddDeviceForm.js:113
+#: js/src/remoteDevices/AddDeviceForm.js:114
 #, fuzzy
 msgid ""
 "The filename can contain only alphanumeric characters, dots, dashes, and "
@@ -63,64 +64,64 @@ msgstr ""
 "Filnavn kan kun inneholde alfanumeriske tegn, punktum, bindestrek og "
 "understreker."
 
-#: js/src/remoteDevices/Devices.js:49
+#: js/src/remoteDevices/Devices.js:50
 #, fuzzy
 msgid "Devices List"
 msgstr "Enhetsliste"
 
-#: js/src/remoteDevices/DevicesTable.js:34
+#: js/src/remoteDevices/DevicesTable.js:37
 msgid "No devices added yet."
 msgstr "Ingen enheter lagt til enda."
 
-#: js/src/remoteDevices/DevicesTable.js:45
+#: js/src/remoteDevices/DevicesTable.js:48
 msgid "ID"
 msgstr "ID"
 
-#: js/src/remoteDevices/DevicesTable.js:46
+#: js/src/remoteDevices/DevicesTable.js:49
 msgid "Name"
 msgstr "Navn"
 
-#: js/src/remoteDevices/DevicesTable.js:48
+#: js/src/remoteDevices/DevicesTable.js:51
 msgid "Status"
 msgstr "Status"
 
-#: js/src/remoteDevices/DevicesTable.js:51
+#: js/src/remoteDevices/DevicesTable.js:54
 msgid "Managed"
 msgstr "Håndtert"
 
-#: js/src/remoteDevices/DevicesTable.js:56
-#: js/src/remoteDevices/DevicesTable.js:131
+#: js/src/remoteDevices/DevicesTable.js:59
+#: js/src/remoteDevices/DevicesTable.js:134
 msgid "Delete"
 msgstr "Slett"
 
-#: js/src/remoteDevices/DevicesTable.js:144
+#: js/src/remoteDevices/DevicesTable.js:147
 msgid "Unknown status"
 msgstr "Ukjent status"
 
-#: js/src/remoteDevices/DevicesTable.js:147
+#: js/src/remoteDevices/DevicesTable.js:150
 msgid "Started"
 msgstr "Startet"
 
-#: js/src/remoteDevices/DevicesTable.js:150
+#: js/src/remoteDevices/DevicesTable.js:153
 #, fuzzy
 msgid "Running"
 msgstr "Kjører"
 
-#: js/src/remoteDevices/DevicesTable.js:153
+#: js/src/remoteDevices/DevicesTable.js:156
 msgid "Exited"
 msgstr "Avsluttet"
 
-#: js/src/remoteDevices/RemoteDevices.js:21
+#: js/src/remoteDevices/RemoteDevices.js:22
 msgid "Devices"
 msgstr "Enheter"
 
-#: js/src/remoteDevices/RemoteDevices.js:23
+#: js/src/remoteDevices/RemoteDevices.js:24
 msgid "You can set up other Turris routers to be managed remotely by this device."
 msgstr ""
 "Du kan sette opp andre Turris-rutere til å bli håndtert eksternt av denne"
 " enheten."
 
-#: js/src/remoteDevices/RemoteDevices.js:28
+#: js/src/remoteDevices/RemoteDevices.js:29
 #, fuzzy
 msgid ""
 "To authorize your router, you will need a token file that can be obtained"
@@ -129,11 +130,11 @@ msgstr ""
 "For å autorisere din ruter trenger du et symbol du kan få med "
 "«Fjerntilgang»-tillegget på målenheten."
 
-#: js/src/remoteDevices/ToggleDevice.js:30
+#: js/src/remoteDevices/ToggleDevice.js:31
 msgid "Yes"
 msgstr "Ja"
 
-#: js/src/remoteDevices/ToggleDevice.js:30
+#: js/src/remoteDevices/ToggleDevice.js:31
 msgid "No"
 msgstr "Nei"
 
@@ -141,33 +142,34 @@ msgstr "Nei"
 msgid "Edit name"
 msgstr "Rediger navn"
 
-#: reforis_remote_devices/__init__.py:43
+#: reforis_remote_devices/__init__.py:44
 #, fuzzy
 msgid "Missing data for 'token' file."
 msgstr "Manglende data for «symbol»-fil."
 
-#: reforis_remote_devices/__init__.py:53
+#: reforis_remote_devices/__init__.py:54
 msgid "Cannot add remote device token. Check if device is already added."
 msgstr ""
 "Kan ikke legge til fjernenhetssymbol. Sjekk om enheten allerede er lagt "
 "til."
 
-#: reforis_remote_devices/__init__.py:64
+#: reforis_remote_devices/__init__.py:66
 msgid "Cannot delete device."
 msgstr "Kan ikke slette enhet."
 
-#: reforis_remote_devices/__init__.py:79
+#: reforis_remote_devices/__init__.py:81
 #, fuzzy
 msgid "Missing data for \"options\" or \"enabled\" field."
 msgstr "Manglende data for «innstillinger» eller «påskrudd»-felt."
 
-#: reforis_remote_devices/__init__.py:86
+#: reforis_remote_devices/__init__.py:87
 msgid "Name is too long. Maximum 30 characters are allowed."
 msgstr "Navnet er for langt. Kun 30 tegn tillates."
 
-#: reforis_remote_devices/__init__.py:107
+#: reforis_remote_devices/__init__.py:106
 msgid "Cannot update device."
 msgstr "Kan ikke oppdatere enhet."
 
 #~ msgid "Devices List"
 #~ msgstr ""
+

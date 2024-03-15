@@ -4,8 +4,8 @@
 #  See /LICENSE for more information.
 
 PROJECT="reForis Remote Devices Plugin"
-# Retrieve version from setup.py 
-VERSION= $(shell sed -En "s/.*version=['\"](.+)['\"].*/\1/p" setup.py)
+# Retrieve version from pyproject.toml 
+VERSION= $(shell sed -En "s/.*version = ['\"](.+)['\"].*/\1/p" pyproject.toml)
 COPYRIGHT_HOLDER="CZ.NIC, z.s.p.o. (https://www.nic.cz/)"
 MSGID_BUGS_ADDRESS="tech.support@turris.cz"
 
@@ -13,6 +13,7 @@ VENV_NAME?=venv
 VENV_BIN=$(shell pwd)/$(VENV_NAME)/bin
 
 PYTHON=python3
+PIP_EXTRA_INDEX_URL=https://gitlab.nic.cz/api/v4/projects/1066/packages/pypi/simple
 
 JS_DIR=./js
 
@@ -56,11 +57,11 @@ prepare-dev:
 
 .PHONY: venv
 venv: $(VENV_NAME)/bin/activate
-$(VENV_NAME)/bin/activate: setup.py
+$(VENV_NAME)/bin/activate: pyproject.toml
 	test -d $(VENV_NAME) || $(PYTHON) -m virtualenv -p $(PYTHON) $(VENV_NAME)
 	# upgrade pip to latest releases
 	$(VENV_BIN)/$(PYTHON) -m pip install --upgrade pip
-	$(VENV_BIN)/$(PYTHON) -m pip install -e .[devel]
+	$(VENV_BIN)/$(PYTHON) -m pip install --index-url $(PIP_EXTRA_INDEX_URL) -e .[devel]
 	touch $(VENV_NAME)/bin/activate
 
 
@@ -69,7 +70,7 @@ $(VENV_NAME)/bin/activate: setup.py
 .PHONY: install
 install:
 	opkg update && opkg install foris-controller-subordinates-module
-	$(PYTHON) -m pip install -e .
+	REFORIS_NO_JS_BUILD=1 $(PYTHON) -m pip install --index-url $(PIP_EXTRA_INDEX_URL) -e .
 	ln -sf /tmp/reforis-remote-devices/reforis_static/reforis_remote_devices /tmp/reforis/reforis_static/
 	/etc/init.d/lighttpd restart
 
@@ -108,8 +109,7 @@ lint-js-fix:
 
 .PHONY: lint-web
 lint-web: venv
-	$(VENV_BIN)/$(PYTHON) -m pylint --rcfile=pylintrc reforis_remote_devices
-	$(VENV_BIN)/$(PYTHON) -m pycodestyle --config=pycodestyle reforis_remote_devices
+	$(VENV_BIN)/$(PYTHON) -m ruff check reforis_remote_devices
 
 
 # Testing
@@ -145,7 +145,7 @@ update-messages: venv
 	$(VENV_BIN)/pybabel update -i ./reforis_remote_devices/translations/messages.pot -d ./reforis_remote_devices/translations --update-header-comment
 
 .PHONY: compile-messages
-compile-messages: venv
+compile-messages: venv install-js
 	$(VENV_BIN)/pybabel compile -f -d ./reforis_remote_devices/translations
 
 
