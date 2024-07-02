@@ -112,3 +112,6 @@ venv.bak/
 reforis_static/reforis_remote_devices/js/*.min.js
 reforis_static/reforis_remote_devices/js/*.LICENSE
 reforis_static/reforis_remote_devices/js/*.txt
+
+## Ruff
+.ruff_cache/
