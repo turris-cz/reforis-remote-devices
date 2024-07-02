@@ -8,6 +8,19 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [2.1.0] - 2024-07-03
+
+### Changed
+
+-   Updated .gitignore to exclude Ruff cache files
+-   Updated dependencies in package.json
+-   Updated Foris JS library to v6.0.2
+-   NPM audit fix
+
+### Removed
+
+-   Removed redundant .gitkeep file
+
 ## [2.0.0] - 2024-03-13
 
 ### Added
@@ -70,7 +83,8 @@ and this project adheres to
 -   Check status of devices
 -   Enable/disable managing device
 
-[unreleased]: https://gitlab.nic.cz/turris/reforis/reforis-remote-devices/-/compare/v2.0.0...master
+[unreleased]: https://gitlab.nic.cz/turris/reforis/reforis-remote-devices/-/compare/v2.1.0...master
+[2.1.0]: https://gitlab.nic.cz/turris/reforis/reforis-remote-devices/-/compare/v2.0.0...v2.1.0
 [2.0.0]: https://gitlab.nic.cz/turris/reforis/reforis-remote-devices/-/compare/v1.3.1...v2.0.0
 [1.4.1]: https://gitlab.nic.cz/turris/reforis/reforis-remote-devices/-/compare/v1.4.0...v1.4.1
 [1.4.0]: https://gitlab.nic.cz/turris/reforis/reforis-remote-devices/-/compare/v1.1.1...v1.4.0

@@ -6,7 +6,7 @@
         "url": "https://gitlab.nic.cz/turris/reforis/reforis-remote-devices.git"
     },
     "license": "GPL-3.0",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "reForis Remote Devices plugin allows detecting new devices on a local network.",
     "main": "./src/app.js",
     "eslintConfig": {
