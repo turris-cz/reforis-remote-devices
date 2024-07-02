@@ -15,10 +15,10 @@ exports[`<AddDeviceForm /> should render form 1`] = `
       class="position-relative"
     >
       <div
-        class="form-group"
+        class="mb-3"
       >
         <label
-          class="custom-file-label"
+          class="form-label custom-file-label"
           for="1"
         >
           Choose token file...
@@ -36,10 +36,10 @@ exports[`<AddDeviceForm /> should render form 1`] = `
         </div>
       </div>
       <div
-        class="text-right"
+        class="text-end"
       >
         <button
-          class="btn btn-primary col-sm-12 col-md-3 col-lg-2 d-inline-flex justify-content-center align-items-center"
+          class="btn btn-primary col-12 col-md-3 col-lg-2 d-inline-flex justify-content-center align-items-center"
           data-testid="upload-token-button"
           disabled=""
           type="submit"
