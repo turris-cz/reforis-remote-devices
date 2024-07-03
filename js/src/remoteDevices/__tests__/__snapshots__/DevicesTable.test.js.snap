@@ -3,7 +3,7 @@
 exports[`<DevicesTable /> should handle empty devices list 1`] = `
 <div>
   <p
-    class="text-muted text-center"
+    class="text-muted text-center mb-0"
   >
     No devices added yet.
   </p>
@@ -46,7 +46,7 @@ exports[`<DevicesTable /> should render devices table 1`] = `
           </th>
           <th
             aria-label="Delete"
-            class="text-right"
+            class="text-end"
             scope="col"
           />
         </tr>
@@ -118,7 +118,7 @@ exports[`<DevicesTable /> should render devices table 1`] = `
             </div>
           </td>
           <td
-            class="text-right"
+            class="text-end"
           >
             <button
               class="btn btn-sm btn-danger d-inline-flex justify-content-center align-items-center"
@@ -126,7 +126,7 @@ exports[`<DevicesTable /> should render devices table 1`] = `
             >
               <span>
                 <i
-                  class="fa fa-trash-alt mr-2 devices-table-delete-icon"
+                  class="fa fa-trash-alt me-2 devices-table-delete-icon"
                 />
                 Delete
               </span>
@@ -198,7 +198,7 @@ exports[`<DevicesTable /> should render devices table 1`] = `
             </div>
           </td>
           <td
-            class="text-right"
+            class="text-end"
           >
             <button
               class="btn btn-sm btn-danger d-inline-flex justify-content-center align-items-center"
@@ -206,7 +206,7 @@ exports[`<DevicesTable /> should render devices table 1`] = `
             >
               <span>
                 <i
-                  class="fa fa-trash-alt mr-2 devices-table-delete-icon"
+                  class="fa fa-trash-alt me-2 devices-table-delete-icon"
                 />
                 Delete
               </span>
@@ -279,7 +279,7 @@ exports[`<DevicesTable /> should render devices table 1`] = `
             </div>
           </td>
           <td
-            class="text-right"
+            class="text-end"
           >
             <button
               class="btn btn-sm btn-danger d-inline-flex justify-content-center align-items-center"
@@ -287,7 +287,7 @@ exports[`<DevicesTable /> should render devices table 1`] = `
             >
               <span>
                 <i
-                  class="fa fa-trash-alt mr-2 devices-table-delete-icon"
+                  class="fa fa-trash-alt me-2 devices-table-delete-icon"
                 />
                 Delete
               </span>
@@ -359,7 +359,7 @@ exports[`<DevicesTable /> should render devices table 1`] = `
             </div>
           </td>
           <td
-            class="text-right"
+            class="text-end"
           >
             <button
               class="btn btn-sm btn-danger d-inline-flex justify-content-center align-items-center"
@@ -367,7 +367,7 @@ exports[`<DevicesTable /> should render devices table 1`] = `
             >
               <span>
                 <i
-                  class="fa fa-trash-alt mr-2 devices-table-delete-icon"
+                  class="fa fa-trash-alt me-2 devices-table-delete-icon"
                 />
                 Delete
               </span>

@@ -73,7 +73,7 @@ export default function AddDeviceForm() {
                     }))}
                     accept=".tar.gz,.tgz"
                 />
-                <div className="text-right">
+                <div className="text-end">
                     <Button
                         data-testid="upload-token-button"
                         type="submit"

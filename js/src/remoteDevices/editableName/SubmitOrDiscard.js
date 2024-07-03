@@ -28,7 +28,7 @@ export default function SubmitOrDiscard({ editorEnabled, onDiscard }) {
         <div className="submit-or-discard">
             <Button
                 type="submit"
-                className={`${buttonClass} mr-2`}
+                className={`${buttonClass} me-2`}
                 title="Save changes"
             >
                 <i className="fa fa-check fa-fw text-success" />

@@ -33,7 +33,7 @@ DevicesTable.propTypes = {
 function DevicesTable({ ws, devices, deleteDevice, patchDevice }) {
     if (!devices || devices.length === 0) {
         return (
-            <p className="text-muted text-center">
+            <p className="text-muted text-center mb-0">
                 {_("No devices added yet.")}
             </p>
         );
@@ -55,7 +55,7 @@ function DevicesTable({ ws, devices, deleteDevice, patchDevice }) {
                         </th>
                         <th
                             scope="col"
-                            className="text-right"
+                            className="text-end"
                             aria-label={_("Delete")}
                         />
                     </tr>
@@ -128,9 +128,9 @@ function DeviceRow({ ws, device, deleteDevice, patchDevice }) {
                     patchDevice={patchDevice}
                 />
             </td>
-            <td className="text-right">
+            <td className="text-end">
                 <Button className="btn-sm btn-danger" onClick={deleteDevice}>
-                    <i className="fa fa-trash-alt mr-2 devices-table-delete-icon" />
+                    <i className="fa fa-trash-alt me-2 devices-table-delete-icon" />
                     {_("Delete")}
                 </Button>
             </td>
