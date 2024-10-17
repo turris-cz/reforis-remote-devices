@@ -7,6 +7,8 @@
 
 import React, { useState, useRef, useEffect } from "react";
 
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, useForm, useClickOutside } from "foris";
 import PropTypes from "prop-types";
 
@@ -89,7 +91,7 @@ export default function EditableName({ name, patchDevice }) {
                 onClick={toggleEdit}
                 title={_("Edit name")}
             >
-                <i className="fa fa-edit text-muted" />
+                <FontAwesomeIcon icon={faEdit} className="text-muted" />
             </Button>
         </form>
     );

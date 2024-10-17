@@ -7,7 +7,15 @@
 
 import React, { useEffect, useState } from "react";
 
-import { Button, useWSForisModule } from "foris";
+import {
+    faTrash,
+    faQuestionCircle,
+    faPlayCircle,
+    faCheckCircle,
+    faTimesCircle,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button, useWSForisModule, CheckBox } from "foris";
 import PropTypes from "prop-types";
 
 import EditableName from "./editableName/EditableName";
@@ -130,8 +138,16 @@ function DeviceRow({ ws, device, deleteDevice, patchDevice }) {
             </td>
             <td className="text-end">
                 <Button className="btn-sm btn-danger" onClick={deleteDevice}>
-                    <i className="fa fa-trash-alt me-2 devices-table-delete-icon" />
-                    {_("Delete")}
+                    <span className="d-xl-none">
+                        <FontAwesomeIcon icon={faTrash} className="fa-sm" />
+                    </span>
+                    <span className="d-none d-xl-block">
+                        <FontAwesomeIcon
+                            icon={faTrash}
+                            className="fa-sm me-1"
+                        />
+                        {_("Delete")}
+                    </span>
                 </Button>
             </td>
         </tr>
@@ -142,27 +158,38 @@ StatusIcon.propTypes = {
     status: PropTypes.string,
 };
 
-function StatusIcon({ status }) {
-    let className = "fa-question-circle text-warning";
-    let statusDescription = _("Unknown status");
-    if (status === "started") {
-        className = "fa-play-circle text-primary";
-        statusDescription = _("Started");
-    } else if (status === "running") {
-        className = "fa-check-circle text-success";
-        statusDescription = _("Running");
-    } else if (status === "exitted") {
-        className = "fa-times-circle text-danger";
-        statusDescription = _("Exited");
-    }
+const statusMap = {
+    started: {
+        icon: faPlayCircle,
+        className: "text-primary",
+        description: _("Started"),
+    },
+    running: {
+        icon: faCheckCircle,
+        className: "text-success",
+        description: _("Running"),
+    },
+    exited: {
+        icon: faTimesCircle,
+        className: "text-danger",
+        description: _("Exited"),
+    },
+    default: {
+        icon: faQuestionCircle,
+        className: "text-warning",
+        description: _("Unknown status"),
+    },
+};
 
-    /*
-     * Wrapper tag is required to properly remove icon because "i" element
-     * is actually replaced by "svg" element.
-     */
+function StatusIcon({ status }) {
+    const { icon, className, description } =
+        statusMap[status] || statusMap.default;
+
     return (
-        <span>
-            <i className={`fa fa-lg ${className}`} title={statusDescription} />
-        </span>
+        <FontAwesomeIcon
+            icon={icon}
+            className={`fa-lg ${className}`}
+            title={description}
+        />
     );
 }

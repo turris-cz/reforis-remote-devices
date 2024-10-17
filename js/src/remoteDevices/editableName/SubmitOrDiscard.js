@@ -7,6 +7,8 @@
 
 import React from "react";
 
+import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "foris";
 import PropTypes from "prop-types";
 
@@ -31,14 +33,22 @@ export default function SubmitOrDiscard({ editorEnabled, onDiscard }) {
                 className={`${buttonClass} me-2`}
                 title="Save changes"
             >
-                <i className="fa fa-check fa-fw text-success" />
+                <FontAwesomeIcon
+                    icon={faCheck}
+                    size="xs"
+                    className="fa-fw text-success"
+                />
             </Button>
             <Button
                 className={buttonClass}
                 onClick={onDiscard}
                 title="Discard changes"
             >
-                <i className="fa fa-times fa-fw text-danger" />
+                <FontAwesomeIcon
+                    icon={faTimes}
+                    size="xs"
+                    className="fa-fw text-danger"
+                />
             </Button>
         </div>
     );
