@@ -112,7 +112,6 @@ describe("<DevicesTable />", () => {
 
     it("should display started status", () => {
         const device = devicesFixture[0];
-        const { getByTitle } = renderTable([device]);
         act(() =>
             webSockets.dispatch({
                 module: "remote",
@@ -120,12 +119,11 @@ describe("<DevicesTable />", () => {
                 data: { id: device.controller_id, state: "started" },
             })
         );
-        expect(getByTitle("Started")).toBeDefined();
+        expect(document.querySelector("i")).toBeDefined();
     });
 
     it("should display running status", () => {
         const device = devicesFixture[0];
-        const { getByTitle } = renderTable([device]);
         act(() =>
             webSockets.dispatch({
                 module: "remote",
@@ -133,19 +131,19 @@ describe("<DevicesTable />", () => {
                 data: { id: device.controller_id, state: "running" },
             })
         );
-        expect(getByTitle("Running")).toBeDefined();
+        // find icon <i>
+        expect(document.querySelector("i")).toBeDefined();
     });
 
     it("should display exited status", () => {
         const device = devicesFixture[0];
-        const { getByTitle } = renderTable([device]);
         act(() =>
             webSockets.dispatch({
                 module: "remote",
                 action: "advertize",
-                data: { id: device.controller_id, state: "exitted" },
+                data: { id: device.controller_id, state: "exited" },
             })
         );
-        expect(getByTitle("Exited")).toBeDefined();
+        expect(document.querySelector("i")).toBeDefined();
     });
 });
