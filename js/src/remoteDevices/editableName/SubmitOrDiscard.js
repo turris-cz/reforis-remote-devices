@@ -12,8 +12,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "foris";
 import PropTypes from "prop-types";
 
-import "./SubmitOrDiscard.css";
-
 SubmitOrDiscard.propTypes = {
     editorEnabled: PropTypes.bool.isRequired,
     onDiscard: PropTypes.func.isRequired,
@@ -24,29 +22,29 @@ export default function SubmitOrDiscard({ editorEnabled, onDiscard }) {
         return null;
     }
 
-    const buttonClass = "btn-sm btn-light shadow-sm mt-1";
+    const buttonClass = "btn-sm btn-light shadow-sm rounded";
 
     return (
-        <div className="submit-or-discard">
+        <div className="position-absolute mt-1">
             <Button
                 type="submit"
                 className={`${buttonClass} me-2`}
-                title="Save changes"
+                title={_("Save changes")}
             >
                 <FontAwesomeIcon
                     icon={faCheck}
-                    size="xs"
+                    size="sm"
                     className="fa-fw text-success"
                 />
             </Button>
             <Button
                 className={buttonClass}
                 onClick={onDiscard}
-                title="Discard changes"
+                title={_("Discard changes")}
             >
                 <FontAwesomeIcon
                     icon={faTimes}
-                    size="xs"
+                    size="sm"
                     className="fa-fw text-danger"
                 />
             </Button>
