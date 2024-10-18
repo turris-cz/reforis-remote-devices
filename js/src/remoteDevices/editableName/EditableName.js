@@ -7,10 +7,11 @@
 
 import React, { useState, useRef, useEffect } from "react";
 
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, useForm, useClickOutside } from "foris";
 import PropTypes from "prop-types";
 
-import "./EditableName.css";
 import SubmitOrDiscard from "./SubmitOrDiscard";
 
 EditableName.propTypes = {
@@ -59,19 +60,20 @@ export default function EditableName({ name, patchDevice }) {
     return (
         <form
             onSubmit={saveChanges}
-            className="editable-name-form"
             ref={formRef}
+            className="d-flex justify-content-between align-items-center"
         >
-            <div className="editable-name-input-wrapper">
+            <div className="d-inline-block position-static flex-grow-1">
                 <input
                     type="text"
                     value={formData.name}
                     maxLength="30"
-                    placeholder="Custom name"
+                    placeholder={_("Custom name")}
+                    style={{ minWidth: "15rem" }}
                     className={
                         editorEnabled
-                            ? "form-control"
-                            : "editable-name-input-disabled"
+                            ? "form-control w-100"
+                            : "bg-transparent border-0 w-100"
                     }
                     readOnly={!editorEnabled}
                     onChange={formChangeHandler((value) => ({
@@ -89,7 +91,7 @@ export default function EditableName({ name, patchDevice }) {
                 onClick={toggleEdit}
                 title={_("Edit name")}
             >
-                <i className="fa fa-edit text-muted" />
+                <FontAwesomeIcon icon={faEdit} className="text-muted" />
             </Button>
         </form>
     );

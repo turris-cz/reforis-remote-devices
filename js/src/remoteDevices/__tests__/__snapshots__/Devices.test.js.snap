@@ -26,10 +26,10 @@ exports[`<Devices /> should render table 1`] = `
       Devices List
     </h2>
     <div
-      class="table-responsive pb-2"
+      class="table-responsive"
     >
       <table
-        class="table table-hover devices-table"
+        class="table table-hover"
       >
         <thead
           class="thead-light"
@@ -65,24 +65,25 @@ exports[`<Devices /> should render table 1`] = `
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr
+            class="align-middle text-nowrap"
+          >
             <td>
               A1
             </td>
-            <td
-              class="editable-name"
-            >
+            <td>
               <form
-                class="editable-name-form"
+                class="d-flex justify-content-between align-items-center"
               >
                 <div
-                  class="editable-name-input-wrapper"
+                  class="d-inline-block position-static flex-grow-1"
                 >
                   <input
-                    class="editable-name-input-disabled"
+                    class="bg-transparent border-0 w-100"
                     maxlength="30"
                     placeholder="Custom name"
                     readonly=""
+                    style="min-width: 15rem;"
                     type="text"
                     value="A"
                   />
@@ -94,7 +95,7 @@ exports[`<Devices /> should render table 1`] = `
                 >
                   <span>
                     <i
-                      class="fa fa-edit text-muted"
+                      class="fa"
                     />
                   </span>
                 </button>
@@ -103,28 +104,25 @@ exports[`<Devices /> should render table 1`] = `
             <td
               class="text-center"
             >
-              <span>
-                <i
-                  class="fa fa-lg fa-question-circle text-warning"
-                  title="Unknown status"
-                />
-              </span>
+              <i
+                class="fa"
+              />
             </td>
             <td
               class="text-center"
             >
               <div
-                class="custom-control custom-switch"
+                class="d-inline-block mb-0 form-check"
               >
                 <input
                   checked=""
-                  class="custom-control-input"
-                  id="toggle-A1"
+                  class="form-check-input"
+                  id="1"
                   type="checkbox"
                 />
                 <label
-                  class="custom-control-label"
-                  for="toggle-A1"
+                  class="form-check-label"
+                  for="1"
                 >
                   Yes
                 </label>
@@ -138,32 +136,44 @@ exports[`<Devices /> should render table 1`] = `
                 type="button"
               >
                 <span>
-                  <i
-                    class="fa fa-trash-alt me-2 devices-table-delete-icon"
-                  />
-                  Delete
+                  <span
+                    class="d-xl-none"
+                  >
+                    <i
+                      class="fa"
+                    />
+                  </span>
+                  <span
+                    class="d-none d-xl-block"
+                  >
+                    <i
+                      class="fa"
+                    />
+                    Delete
+                  </span>
                 </span>
               </button>
             </td>
           </tr>
-          <tr>
+          <tr
+            class="align-middle text-nowrap"
+          >
             <td>
               A2
             </td>
-            <td
-              class="editable-name"
-            >
+            <td>
               <form
-                class="editable-name-form"
+                class="d-flex justify-content-between align-items-center"
               >
                 <div
-                  class="editable-name-input-wrapper"
+                  class="d-inline-block position-static flex-grow-1"
                 >
                   <input
-                    class="editable-name-input-disabled"
+                    class="bg-transparent border-0 w-100"
                     maxlength="30"
                     placeholder="Custom name"
                     readonly=""
+                    style="min-width: 15rem;"
                     type="text"
                     value="A"
                   />
@@ -175,7 +185,7 @@ exports[`<Devices /> should render table 1`] = `
                 >
                   <span>
                     <i
-                      class="fa fa-edit text-muted"
+                      class="fa"
                     />
                   </span>
                 </button>
@@ -184,27 +194,24 @@ exports[`<Devices /> should render table 1`] = `
             <td
               class="text-center"
             >
-              <span>
-                <i
-                  class="fa fa-lg fa-question-circle text-warning"
-                  title="Unknown status"
-                />
-              </span>
+              <i
+                class="fa"
+              />
             </td>
             <td
               class="text-center"
             >
               <div
-                class="custom-control custom-switch"
+                class="d-inline-block mb-0 form-check"
               >
                 <input
-                  class="custom-control-input"
-                  id="toggle-A2"
+                  class="form-check-input"
+                  id="2"
                   type="checkbox"
                 />
                 <label
-                  class="custom-control-label"
-                  for="toggle-A2"
+                  class="form-check-label"
+                  for="2"
                 >
                   No
                 </label>
@@ -218,32 +225,44 @@ exports[`<Devices /> should render table 1`] = `
                 type="button"
               >
                 <span>
-                  <i
-                    class="fa fa-trash-alt me-2 devices-table-delete-icon"
-                  />
-                  Delete
+                  <span
+                    class="d-xl-none"
+                  >
+                    <i
+                      class="fa"
+                    />
+                  </span>
+                  <span
+                    class="d-none d-xl-block"
+                  >
+                    <i
+                      class="fa"
+                    />
+                    Delete
+                  </span>
                 </span>
               </button>
             </td>
           </tr>
-          <tr>
+          <tr
+            class="align-middle text-nowrap"
+          >
             <td>
               B1
             </td>
-            <td
-              class="editable-name"
-            >
+            <td>
               <form
-                class="editable-name-form"
+                class="d-flex justify-content-between align-items-center"
               >
                 <div
-                  class="editable-name-input-wrapper"
+                  class="d-inline-block position-static flex-grow-1"
                 >
                   <input
-                    class="editable-name-input-disabled"
+                    class="bg-transparent border-0 w-100"
                     maxlength="30"
                     placeholder="Custom name"
                     readonly=""
+                    style="min-width: 15rem;"
                     type="text"
                     value="B"
                   />
@@ -255,7 +274,7 @@ exports[`<Devices /> should render table 1`] = `
                 >
                   <span>
                     <i
-                      class="fa fa-edit text-muted"
+                      class="fa"
                     />
                   </span>
                 </button>
@@ -264,28 +283,25 @@ exports[`<Devices /> should render table 1`] = `
             <td
               class="text-center"
             >
-              <span>
-                <i
-                  class="fa fa-lg fa-question-circle text-warning"
-                  title="Unknown status"
-                />
-              </span>
+              <i
+                class="fa"
+              />
             </td>
             <td
               class="text-center"
             >
               <div
-                class="custom-control custom-switch"
+                class="d-inline-block mb-0 form-check"
               >
                 <input
                   checked=""
-                  class="custom-control-input"
-                  id="toggle-B1"
+                  class="form-check-input"
+                  id="3"
                   type="checkbox"
                 />
                 <label
-                  class="custom-control-label"
-                  for="toggle-B1"
+                  class="form-check-label"
+                  for="3"
                 >
                   Yes
                 </label>
@@ -299,32 +315,44 @@ exports[`<Devices /> should render table 1`] = `
                 type="button"
               >
                 <span>
-                  <i
-                    class="fa fa-trash-alt me-2 devices-table-delete-icon"
-                  />
-                  Delete
+                  <span
+                    class="d-xl-none"
+                  >
+                    <i
+                      class="fa"
+                    />
+                  </span>
+                  <span
+                    class="d-none d-xl-block"
+                  >
+                    <i
+                      class="fa"
+                    />
+                    Delete
+                  </span>
                 </span>
               </button>
             </td>
           </tr>
-          <tr>
+          <tr
+            class="align-middle text-nowrap"
+          >
             <td>
               B2
             </td>
-            <td
-              class="editable-name"
-            >
+            <td>
               <form
-                class="editable-name-form"
+                class="d-flex justify-content-between align-items-center"
               >
                 <div
-                  class="editable-name-input-wrapper"
+                  class="d-inline-block position-static flex-grow-1"
                 >
                   <input
-                    class="editable-name-input-disabled"
+                    class="bg-transparent border-0 w-100"
                     maxlength="30"
                     placeholder="Custom name"
                     readonly=""
+                    style="min-width: 15rem;"
                     type="text"
                     value="B"
                   />
@@ -336,7 +364,7 @@ exports[`<Devices /> should render table 1`] = `
                 >
                   <span>
                     <i
-                      class="fa fa-edit text-muted"
+                      class="fa"
                     />
                   </span>
                 </button>
@@ -345,27 +373,24 @@ exports[`<Devices /> should render table 1`] = `
             <td
               class="text-center"
             >
-              <span>
-                <i
-                  class="fa fa-lg fa-question-circle text-warning"
-                  title="Unknown status"
-                />
-              </span>
+              <i
+                class="fa"
+              />
             </td>
             <td
               class="text-center"
             >
               <div
-                class="custom-control custom-switch"
+                class="d-inline-block mb-0 form-check"
               >
                 <input
-                  class="custom-control-input"
-                  id="toggle-B2"
+                  class="form-check-input"
+                  id="4"
                   type="checkbox"
                 />
                 <label
-                  class="custom-control-label"
-                  for="toggle-B2"
+                  class="form-check-label"
+                  for="4"
                 >
                   No
                 </label>
@@ -379,10 +404,21 @@ exports[`<Devices /> should render table 1`] = `
                 type="button"
               >
                 <span>
-                  <i
-                    class="fa fa-trash-alt me-2 devices-table-delete-icon"
-                  />
-                  Delete
+                  <span
+                    class="d-xl-none"
+                  >
+                    <i
+                      class="fa"
+                    />
+                  </span>
+                  <span
+                    class="d-none d-xl-block"
+                  >
+                    <i
+                      class="fa"
+                    />
+                    Delete
+                  </span>
                 </span>
               </button>
             </td>
