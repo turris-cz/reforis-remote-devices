@@ -8,6 +8,18 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [2.2.0] - 2024-10-21
+
+### Added
+
+-   Added & updated Weblate translations
+
+### Changed
+
+-   Migrated to FontAwesome v6
+-   Updated Foris JS library to v6.4.0
+-   Refactored DevicesTable component and related files
+
 ## [2.1.0] - 2024-07-03
 
 ### Changed
@@ -83,7 +95,8 @@ and this project adheres to
 -   Check status of devices
 -   Enable/disable managing device
 
-[unreleased]: https://gitlab.nic.cz/turris/reforis/reforis-remote-devices/-/compare/v2.1.0...master
+[unreleased]: https://gitlab.nic.cz/turris/reforis/reforis-remote-devices/-/compare/v2.2.0...master
+[2.2.0]: https://gitlab.nic.cz/turris/reforis/reforis-remote-devices/-/compare/v2.1.0...v2.2.0
 [2.1.0]: https://gitlab.nic.cz/turris/reforis/reforis-remote-devices/-/compare/v2.0.0...v2.1.0
 [2.0.0]: https://gitlab.nic.cz/turris/reforis/reforis-remote-devices/-/compare/v1.3.1...v2.0.0
 [1.4.1]: https://gitlab.nic.cz/turris/reforis/reforis-remote-devices/-/compare/v1.4.0...v1.4.1

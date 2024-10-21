@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-13 15:28+0100\n"
+"POT-Creation-Date: 2024-10-21 17:20+0200\n"
 "PO-Revision-Date: 2023-09-22 20:59+0000\n"
 "Last-Translator: Kristoffer Grundström "
 "<swedishsailfishosuser@tutanota.com>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.14.0\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: js/src/app.js:11
 msgid "Remote Devices"
@@ -59,46 +59,54 @@ msgstr ""
 msgid "Devices List"
 msgstr ""
 
-#: js/src/remoteDevices/DevicesTable.js:37
+#: js/src/remoteDevices/DevicesTable.js:42
 msgid "No devices added yet."
 msgstr "Inga enheter har lagts till än."
 
-#: js/src/remoteDevices/DevicesTable.js:48
+#: js/src/remoteDevices/DevicesTable.js:52
 msgid "ID"
 msgstr "ID"
 
-#: js/src/remoteDevices/DevicesTable.js:49
+#: js/src/remoteDevices/DevicesTable.js:53
 msgid "Name"
 msgstr "Namn"
 
-#: js/src/remoteDevices/DevicesTable.js:51
+#: js/src/remoteDevices/DevicesTable.js:55
 msgid "Status"
 msgstr "Status"
 
-#: js/src/remoteDevices/DevicesTable.js:54
+#: js/src/remoteDevices/DevicesTable.js:58
 msgid "Managed"
 msgstr ""
 
-#: js/src/remoteDevices/DevicesTable.js:59
-#: js/src/remoteDevices/DevicesTable.js:134
+#: js/src/remoteDevices/DevicesTable.js:63
+#: js/src/remoteDevices/DevicesTable.js:146
 msgid "Delete"
 msgstr "Ta bort"
 
-#: js/src/remoteDevices/DevicesTable.js:147
-msgid "Unknown status"
-msgstr "Okänd status"
+#: js/src/remoteDevices/DevicesTable.js:133
+msgid "Yes"
+msgstr "Ja"
 
-#: js/src/remoteDevices/DevicesTable.js:150
+#: js/src/remoteDevices/DevicesTable.js:133
+msgid "No"
+msgstr "Nej"
+
+#: js/src/remoteDevices/DevicesTable.js:162
 msgid "Started"
 msgstr ""
 
-#: js/src/remoteDevices/DevicesTable.js:153
+#: js/src/remoteDevices/DevicesTable.js:167
 msgid "Running"
 msgstr ""
 
-#: js/src/remoteDevices/DevicesTable.js:156
+#: js/src/remoteDevices/DevicesTable.js:172
 msgid "Exited"
 msgstr ""
+
+#: js/src/remoteDevices/DevicesTable.js:177
+msgid "Unknown status"
+msgstr "Okänd status"
 
 #: js/src/remoteDevices/RemoteDevices.js:22
 msgid "Devices"
@@ -116,41 +124,45 @@ msgstr ""
 "För att autentisera din router så behöver du en symbol-fil som kan "
 "erhållas med insticksprogrammet \"Fjärråtkomst\" i mål-enheten."
 
-#: js/src/remoteDevices/ToggleDevice.js:31
-msgid "Yes"
-msgstr "Ja"
+#: js/src/remoteDevices/editableName/EditableName.js:71
+msgid "Custom name"
+msgstr ""
 
-#: js/src/remoteDevices/ToggleDevice.js:31
-msgid "No"
-msgstr "Nej"
-
-#: js/src/remoteDevices/editableName/EditableName.js:90
+#: js/src/remoteDevices/editableName/EditableName.js:92
 msgid "Edit name"
 msgstr ""
 
-#: reforis_remote_devices/__init__.py:44
+#: js/src/remoteDevices/editableName/SubmitOrDiscard.js:32
+msgid "Save changes"
+msgstr ""
+
+#: js/src/remoteDevices/editableName/SubmitOrDiscard.js:43
+msgid "Discard changes"
+msgstr ""
+
+#: reforis_remote_devices/__init__.py:42
 msgid "Missing data for 'token' file."
 msgstr "Data saknas för 'symbol'-filen."
 
-#: reforis_remote_devices/__init__.py:54
+#: reforis_remote_devices/__init__.py:52
 msgid "Cannot add remote device token. Check if device is already added."
 msgstr ""
 "Kan inte lägga till symbol-filen för fjärrenheten. Kolla om enheten redan"
 " har lagts till."
 
-#: reforis_remote_devices/__init__.py:66
+#: reforis_remote_devices/__init__.py:64
 msgid "Cannot delete device."
 msgstr "Kan inte radera enhet."
 
-#: reforis_remote_devices/__init__.py:81
+#: reforis_remote_devices/__init__.py:79
 msgid "Missing data for \"options\" or \"enabled\" field."
 msgstr "Data saknas för fältet \"alternativ\" eller \"aktiverad\"."
 
-#: reforis_remote_devices/__init__.py:87
+#: reforis_remote_devices/__init__.py:85
 msgid "Name is too long. Maximum 30 characters are allowed."
 msgstr "Namnet är för långt. Maximalt 30 tecken är tillåtna."
 
-#: reforis_remote_devices/__init__.py:106
+#: reforis_remote_devices/__init__.py:104
 msgid "Cannot update device."
 msgstr "Kan inte uppdatera enhet."
 
