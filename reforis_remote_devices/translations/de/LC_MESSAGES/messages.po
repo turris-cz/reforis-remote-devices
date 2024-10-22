@@ -9,15 +9,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2024-10-21 17:20+0200\n"
-"PO-Revision-Date: 2023-09-08 13:49+0000\n"
-"Last-Translator: Erik Pfannenstein <debianignatz@gmx.de>\n"
+"PO-Revision-Date: 2024-10-23 02:15+0000\n"
+"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/turris/"
+"reforis-remote-devices-plugin/de/>\n"
 "Language: de\n"
-"Language-Team: German <https://hosted.weblate.org/projects/turris"
-"/reforis-remote-devices-plugin/de/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.8.2-dev\n"
 "Generated-By: Babel 2.16.0\n"
 
 #: js/src/app.js:11
@@ -130,9 +131,8 @@ msgstr ""
 "Sie mit Hilfe des \"Fernzugriff\"-Plugins auf dem Zielgerät erhalten."
 
 #: js/src/remoteDevices/editableName/EditableName.js:71
-#, fuzzy
 msgid "Custom name"
-msgstr "Name bearbeiten"
+msgstr "Benutzerdefinierter Name"
 
 #: js/src/remoteDevices/editableName/EditableName.js:92
 msgid "Edit name"
@@ -140,11 +140,11 @@ msgstr "Name bearbeiten"
 
 #: js/src/remoteDevices/editableName/SubmitOrDiscard.js:32
 msgid "Save changes"
-msgstr ""
+msgstr "Änderungen speichern"
 
 #: js/src/remoteDevices/editableName/SubmitOrDiscard.js:43
 msgid "Discard changes"
-msgstr ""
+msgstr "Änderungen verwerfen"
 
 #: reforis_remote_devices/__init__.py:42
 msgid "Missing data for 'token' file."
@@ -201,4 +201,3 @@ msgstr "Gerät kann nicht aktualisiert werden."
 
 #~ msgid "Choose token file"
 #~ msgstr ""
-
