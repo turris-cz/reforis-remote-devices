@@ -9,14 +9,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2024-10-21 17:20+0200\n"
-"PO-Revision-Date: 2020-01-31 16:21+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2025-02-01 14:02+0000\n"
+"Last-Translator: Ricky Tigg <ricky.tigg@gmail.com>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/turris/"
+"reforis-remote-devices-plugin/fi/>\n"
 "Language: fi\n"
-"Language-Team: fi <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 "Generated-By: Babel 2.16.0\n"
 
 #: js/src/app.js:11
@@ -45,13 +47,15 @@ msgstr ""
 
 #: js/src/remoteDevices/AddDeviceForm.js:107
 msgid "The filename must be at least 1 and at most 50 characters long."
-msgstr ""
+msgstr "Tiedoston nimen tulee olla vähintään yksi ja enintään 50 merkkiä pitkä."
 
 #: js/src/remoteDevices/AddDeviceForm.js:114
 msgid ""
 "The filename can contain only alphanumeric characters, dots, dashes, and "
 "underscores."
 msgstr ""
+"Tiedoston nimi voi sisältää vain aakkosnumeerisia merkkejä, pisteitä, "
+"väliviivoja ja alaviivoja."
 
 #: js/src/remoteDevices/Devices.js:50
 msgid "Devices List"
@@ -189,4 +193,3 @@ msgstr ""
 
 #~ msgid "Choose token file"
 #~ msgstr ""
-
