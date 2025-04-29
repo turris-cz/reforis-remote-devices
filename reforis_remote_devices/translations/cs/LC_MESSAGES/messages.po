@@ -1,25 +1,24 @@
 # Czech translations for reForis Remote Devices Plugin.
-# Copyright (C) 2024 CZ.NIC, z.s.p.o. (https://www.nic.cz/)
+# Copyright (C) 2025 CZ.NIC, z.s.p.o. (https://www.nic.cz/)
 # This file is distributed under the same license as the reForis Remote
 # Devices Plugin project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-10-21 17:20+0200\n"
+"POT-Creation-Date: 2025-04-29 15:06+0200\n"
 "PO-Revision-Date: 2024-11-15 13:00+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/turris/"
-"reforis-remote-devices-plugin/cs/>\n"
 "Language: cs\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis-"
+"remote-devices-plugin/cs/>\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.9-dev\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: js/src/app.js:11
 msgid "Remote Devices"
@@ -119,16 +118,16 @@ msgstr "Zařízení"
 #: js/src/remoteDevices/RemoteDevices.js:24
 msgid "You can set up other Turris routers to be managed remotely by this device."
 msgstr ""
-"Můžete nastavit jiné směrovače Turris, aby byly vzdáleně spravovány z tohoto "
-"zařízení."
+"Můžete nastavit jiné směrovače Turris, aby byly vzdáleně spravovány z "
+"tohoto zařízení."
 
 #: js/src/remoteDevices/RemoteDevices.js:29
 msgid ""
 "To authorize your router, you will need a token file that can be obtained"
 " with the \"Remote Access\" plugin on the target device."
 msgstr ""
-"K pověření směrovače budete potřebovat token, který lze získat v zásuvném "
-"modulu „Vzdálený přístup“ na cílovém zařízení."
+"K pověření směrovače budete potřebovat token, který lze získat v zásuvném"
+" modulu „Vzdálený přístup“ na cílovém zařízení."
 
 #: js/src/remoteDevices/editableName/EditableName.js:71
 msgid "Custom name"
@@ -174,3 +173,4 @@ msgstr "Nelze aktualizovat zařízení."
 
 #~ msgid "Devices List"
 #~ msgstr ""
+
