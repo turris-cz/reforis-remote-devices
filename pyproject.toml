@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "reforis-remote-devices"
-version = "2.2.0"
+version = "2.3.0"
 description = "reForis Remote Devices plugin allows detecting new devices on a local network."
 readme = "README.md"
 license = "GPL-3.0-or-later"
