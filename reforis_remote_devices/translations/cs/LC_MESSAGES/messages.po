@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-04-29 15:06+0200\n"
-"PO-Revision-Date: 2024-11-15 13:00+0000\n"
-"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
+"POT-Creation-Date: 2025-11-06 18:43+0300\n"
+"PO-Revision-Date: 2025-07-08 13:01+0000\n"
+"Last-Translator: Lukas Jelinek <lukas.jelinek@nic.cz>\n"
 "Language: cs\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis-"
 "remote-devices-plugin/cs/>\n"
@@ -55,8 +55,8 @@ msgid ""
 "The filename can contain only alphanumeric characters, dots, dashes, and "
 "underscores."
 msgstr ""
-"Název souboru může obsahovat jen alfanumerické znaky, tečky, spojovníky a"
-" podtržítka."
+"Název souboru může obsahovat jen písmena, číslice, tečky, spojovníky a "
+"podtržítka."
 
 #: js/src/remoteDevices/Devices.js:50
 msgid "Devices List"
@@ -152,12 +152,12 @@ msgstr "Chybí data pro soubor s tokenem."
 #: reforis_remote_devices/__init__.py:52
 msgid "Cannot add remote device token. Check if device is already added."
 msgstr ""
-"Nelze přidat token vzdáleného zařízení. Zkontrolujte, zda už zařízení "
-"nebylo přidáno."
+"Nebylo možné přidat token vzdáleného zařízení. Zkontrolujte, zda už "
+"zařízení nebylo přidáno."
 
 #: reforis_remote_devices/__init__.py:64
 msgid "Cannot delete device."
-msgstr "Nelze smazat zařízení."
+msgstr "Zařízení nebylo možné smazat."
 
 #: reforis_remote_devices/__init__.py:79
 msgid "Missing data for \"options\" or \"enabled\" field."
@@ -165,11 +165,11 @@ msgstr "Chybí data pro kolonky „volby“ nebo „povoleno“."
 
 #: reforis_remote_devices/__init__.py:85
 msgid "Name is too long. Maximum 30 characters are allowed."
-msgstr "Název je příliš dlouhý. Je povoleno maximálně 30 znaků."
+msgstr "Název je příliš dlouhý. Je povoleno nejvýše 30 znaků."
 
 #: reforis_remote_devices/__init__.py:104
 msgid "Cannot update device."
-msgstr "Nelze aktualizovat zařízení."
+msgstr "Nebylo možné aktualizovat zařízení."
 
 #~ msgid "Devices List"
 #~ msgstr ""
