@@ -9,21 +9,21 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-11-06 18:43+0300\n"
-"PO-Revision-Date: 2025-03-01 03:01+0000\n"
-"Last-Translator: Kristoffer Grundström "
-"<swedishsailfishosuser@tutanota.com>\n"
+"PO-Revision-Date: 2026-01-08 19:01+0000\n"
+"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/turris/reforis-"
+"remote-devices-plugin/sv/>\n"
 "Language: sv\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/turris"
-"/reforis-remote-devices-plugin/sv/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.1\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: js/src/app.js:11
 msgid "Remote Devices"
-msgstr ""
+msgstr "Fjärrenheter"
 
 #: js/src/remoteDevices/AddDeviceForm.js:56
 msgid "Add Device"
@@ -35,7 +35,7 @@ msgstr ""
 
 #: js/src/remoteDevices/AddDeviceForm.js:67
 msgid "Choose token file..."
-msgstr ""
+msgstr "Välj token-fil..."
 
 #: js/src/remoteDevices/AddDeviceForm.js:86
 msgid "Upload token"
@@ -77,7 +77,7 @@ msgstr "Status"
 
 #: js/src/remoteDevices/DevicesTable.js:58
 msgid "Managed"
-msgstr ""
+msgstr "Hanterad"
 
 #: js/src/remoteDevices/DevicesTable.js:63
 #: js/src/remoteDevices/DevicesTable.js:146
@@ -98,11 +98,11 @@ msgstr ""
 
 #: js/src/remoteDevices/DevicesTable.js:167
 msgid "Running"
-msgstr ""
+msgstr "Körs"
 
 #: js/src/remoteDevices/DevicesTable.js:172
 msgid "Exited"
-msgstr ""
+msgstr "Avslutades"
 
 #: js/src/remoteDevices/DevicesTable.js:177
 msgid "Unknown status"
@@ -126,19 +126,19 @@ msgstr ""
 
 #: js/src/remoteDevices/editableName/EditableName.js:71
 msgid "Custom name"
-msgstr ""
+msgstr "Anpassat namn"
 
 #: js/src/remoteDevices/editableName/EditableName.js:92
 msgid "Edit name"
-msgstr ""
+msgstr "Redigera namn"
 
 #: js/src/remoteDevices/editableName/SubmitOrDiscard.js:32
 msgid "Save changes"
-msgstr ""
+msgstr "Spara ändringar"
 
 #: js/src/remoteDevices/editableName/SubmitOrDiscard.js:43
 msgid "Discard changes"
-msgstr ""
+msgstr "Kasta bort ändringar"
 
 #: reforis_remote_devices/__init__.py:42
 msgid "Missing data for 'token' file."
@@ -195,4 +195,3 @@ msgstr "Kan inte uppdatera enhet."
 
 #~ msgid "Choose token file"
 #~ msgstr ""
-
