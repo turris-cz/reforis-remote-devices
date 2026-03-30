@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-11-06 18:43+0300\n"
-"PO-Revision-Date: 2026-03-15 19:09+0000\n"
+"PO-Revision-Date: 2026-03-31 21:09+0000\n"
 "Last-Translator: Fln <weblate.org@fln.lt>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/turris/"
 "reforis-remote-devices-plugin/lt/>\n"
@@ -87,7 +87,7 @@ msgstr ""
 #: js/src/remoteDevices/DevicesTable.js:63
 #: js/src/remoteDevices/DevicesTable.js:146
 msgid "Delete"
-msgstr ""
+msgstr "Šalinti"
 
 #: js/src/remoteDevices/DevicesTable.js:133
 msgid "Yes"
