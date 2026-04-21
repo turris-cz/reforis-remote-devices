@@ -9,14 +9,16 @@ msgstr ""
 "Project-Id-Version: reForis Remote Devices Plugin 2.3.0\n"
 "Report-Msgid-Bugs-To: tech.support@turris.cz\n"
 "POT-Creation-Date: 2025-11-06 18:43+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-04-22 15:13+0000\n"
+"Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Estonian <https://hosted.weblate.org/projects/turris/reforis-"
+"remote-devices-plugin/et/>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: js/src/app.js:11
@@ -67,7 +69,7 @@ msgstr ""
 
 #: js/src/remoteDevices/DevicesTable.js:53
 msgid "Name"
-msgstr ""
+msgstr "Nimi"
 
 #: js/src/remoteDevices/DevicesTable.js:55
 msgid "Status"
@@ -80,7 +82,7 @@ msgstr ""
 #: js/src/remoteDevices/DevicesTable.js:63
 #: js/src/remoteDevices/DevicesTable.js:146
 msgid "Delete"
-msgstr ""
+msgstr "Kustuta"
 
 #: js/src/remoteDevices/DevicesTable.js:133
 msgid "Yes"
