@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-11-06 18:43+0300\n"
-"PO-Revision-Date: 2026-01-08 19:01+0000\n"
+"PO-Revision-Date: 2026-07-06 00:01+0000\n"
 "Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/turris/reforis-"
 "remote-devices-plugin/sv/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: js/src/app.js:11
@@ -94,7 +94,7 @@ msgstr "Nej"
 
 #: js/src/remoteDevices/DevicesTable.js:162
 msgid "Started"
-msgstr ""
+msgstr "Påbörjades"
 
 #: js/src/remoteDevices/DevicesTable.js:167
 msgid "Running"
