@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-11-06 18:43+0300\n"
 "PO-Revision-Date: 2026-09-04 13:55+0000\n"
-"Last-Translator: Lukas Jelinek <lukas.jelinek@nic.cz>\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language: cs\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis-"
 "remote-devices-plugin/cs/>\n"
@@ -119,16 +119,16 @@ msgstr "Zařízení"
 #: js/src/remoteDevices/RemoteDevices.js:24
 msgid "You can set up other Turris routers to be managed remotely by this device."
 msgstr ""
-"Můžete nastavit jiné směrovače Turris, aby byly vzdáleně spravovány z "
-"tohoto zařízení."
+"Můžete nastavit jiné směrovače Turris, aby byly vzdáleně spravovány z tohoto "
+"zařízení."
 
 #: js/src/remoteDevices/RemoteDevices.js:29
 msgid ""
 "To authorize your router, you will need a token file that can be obtained"
 " with the \"Remote Access\" plugin on the target device."
 msgstr ""
-"K pověření směrovače budete potřebovat token, který lze získat v zásuvném"
-" modulu „Vzdálený přístup“ na cílovém zařízení."
+"K pověření směrovače budete potřebovat token, který lze získat v zásuvném "
+"modulu „Vzdálený přístup“ na cílovém zařízení."
 
 #: js/src/remoteDevices/editableName/EditableName.js:71
 msgid "Custom name"
@@ -153,8 +153,8 @@ msgstr "Chybí data pro soubor s tokenem."
 #: reforis_remote_devices/__init__.py:52
 msgid "Cannot add remote device token. Check if device is already added."
 msgstr ""
-"Nebylo možné přidat token vzdáleného zařízení. Zkontrolujte, zda už "
-"zařízení nebylo přidáno."
+"Nebylo možné přidat token vzdáleného zařízení. Zkontrolujte, zda už zařízení "
+"nebylo přidáno."
 
 #: reforis_remote_devices/__init__.py:64
 msgid "Cannot delete device."
